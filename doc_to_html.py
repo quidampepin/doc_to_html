@@ -32,8 +32,10 @@ with open("page.html", "r") as file:
     filedata = filedata.replace('</script>\n  </link>\n </head>\n', '</script>\n </head>\n')
     filedata = filedata.replace('<link href="https://www.canada.ca/etc/designs/canada/wet-boew/assets/wmms-blk.svg" property="logo"/>\n         </meta>\n        </meta>\n       </div>\n', '<link href="https://www.canada.ca/etc/designs/canada/wet-boew/assets/wmms-blk.svg" property="logo"/>\n         </div>\n')
     filedata = filedata.replace('<div class="par iparys_inherited">\n</div>\n<div class="par iparys_inherited">\n', '</main>\n<div class="par iparys_inherited">\n</div>\n<div class="par iparys_inherited">\n')
-
-
+    filedata = filedata.replace('\n </a>\n ', '</a>')
+    filedata = filedata.replace('<h3>\n On this page', '<h2 class="h3">\n On this page')
+    filedata = filedata.replace('&lt;', '<')
+    filedata = filedata.replace('&gt;', '>')
 
 
 # Write the file out again

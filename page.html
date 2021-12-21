@@ -252,7 +252,7 @@
 <p>
  This is the start of the actual content
 </p>
-<h3>
+<h2 class="h3">
  On this page
 </h3>
 <ul>
@@ -321,30 +321,15 @@
 <p>
  This is a simple
  <a href="https://test.canada.ca/service-canada/templates/template-basic-en.html">
-  hyperlink to something else
- </a>
- , and a
+  hyperlink to something else</a>, and a
  <a href="mailto:email@example.com">
-  email link
- </a>
- .
+  email link</a>.
 </p>
 <h2>
  Bullet list
 </h2>
 <h3>
  Unordered list
-</h3>
-<ul>
- <li>
-  item 1
- </li>
- <li>
-  item 2
- </li>
-</ul>
-<h3>
- Ordered list
 </h3>
 <ul>
  <li>
@@ -363,64 +348,76 @@
  Single expand-collapse
 </h3>
 <p>
- Summary of the item
+ <details>
+</p>
+<p>
+ <summary>Summary of the item</summary>
 </p>
 <p>
  Include any code in the hidden section before you close the details tag
 </p>
+<p>
+ </details>
+</p>
 <h3>
- Multiple expand-collapses in a list
+ Multiple xpand-collapses in a list
 </h3>
 <p>
- Item 1
+ <details>
+</p>
+<p>
+ <summary>Item 1</summary>
 </p>
 <p>
  Content for item 1
 </p>
 <p>
- Item 2
+ </details>
+</p>
+<p>
+ <details>
+</p>
+<p>
+ <summary>Item 2</summary>
 </p>
 <p>
  Content for item 2
 </p>
 <p>
- Item 3
+ </details>
+</p>
+<p>
+ <details>
+</p>
+<p>
+ <summary>Item 3</summary>
 </p>
 <p>
  Content for item 3
+</p>
+<p>
+ </details>
 </p>
 <h2>
  Buttons
 </h2>
 <p>
- Super-task button Primary button Secondary button Danger button
+ <button class="btn btn-call-to-action">Super-task button</button>
 </p>
 <h2>
  Alerts
 </h2>
 <p>
- Danger alert
+ <section class="alert alert-danger">
 </p>
+<h3>
+ Danger alert
+</h3>
 <p>
  For dangerous situations or technical issues
 </p>
 <p>
- Warning alerts
-</p>
-<p>
- To warn people of consequences of actions or inactions
-</p>
-<p>
- Information alerts
-</p>
-<p>
- To draw attention to a clarification
-</p>
-<p>
- Success alerts
-</p>
-<p>
- To draw attention to a successful action, like confirming a submission
+ </section>
 </p>
 <h2>
  Responsive tables
@@ -561,9 +558,7 @@
 <p>
  See
  <a href="https://design.canada.ca/common-design-patterns/tables.html">
-  Data tables
- </a>
- for all formatting options (striped rows, borders, hover, filtering, etc.).
+  Data tables</a>for all formatting options (striped rows, borders, hover, filtering, etc.).
 </p>
 <h2>
  Labels
