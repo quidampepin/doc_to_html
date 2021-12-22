@@ -1,6 +1,6 @@
 import mammoth
 from bs4 import BeautifulSoup
-f = open("test_code.docx", 'rb')
+f = open("test_code_2.docx", 'rb')
 b = open('doc.html', 'wb')
 document = mammoth.convert_to_html(f)
 b.write(document.value.encode('utf8'))
@@ -28,7 +28,6 @@ with open("page.html", "w") as file:
 
 with open("page.html", "r") as file:
     filedata = file.read()
-
     filedata = filedata.replace('</meta>\n </head>\n', '</head>\n')
     filedata = filedata.replace('<nav>\n   <ul id="wb-tphp">\n    <div class="par iparys_inherited">\n     <div class="global-header">\n', '<div class="par iparys_inherited">\n     <div class="global-header">\n')
     filedata = filedata.replace('<main class="container" property="mainContentOfPage" resource="#wb-main" typeof="WebPageElement">\n    </main>\n   </ul>\n  </nav>\n </body>\n</html><h1>', '<main class="container" property="mainContentOfPage" resource="#wb-main" typeof="WebPageElement">\n    <h1>')
@@ -39,10 +38,10 @@ with open("page.html", "r") as file:
     filedata = filedata.replace('<h3>\n On this page\n</h3>', '<h2 class="h3">\n On this page\n</h2>')
     filedata = filedata.replace('&lt;', '<')
     filedata = filedata.replace('&gt;', '>')
-    filedata = filedata.replace('<p>\n <details>\n</p>\n', '<details>\n')
-    filedata = filedata.replace('<p>\n <summary>', '<summary>')
-    filedata = filedata.replace('</summary>\n</p>', '</summary>\n')
+    filedata = filedata.replace('<p>\n <details>\n</p>\n<p>\n <summary>\n</p>', '<details>\n<summary>\n')
+    filedata = filedata.replace('<p>\n </summary>\n</p>', '</summary>\n')
     filedata = filedata.replace('<p>\n </details>\n</p>\n', '</details>\n')
+
 
 
 
