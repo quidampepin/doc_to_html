@@ -3,6 +3,10 @@ from bs4 import BeautifulSoup
 
 
 custom_styles = """ i => cite
+                    p[style-name='ordered'] => ol
+                    p[style-name='details'] => details
+                    p[style-name='button'] => buttons
+                    p[style-name='alert'] => alert
                     p[style-name='summary'] => summary"""
 
 
