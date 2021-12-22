@@ -1,13 +1,19 @@
 import mammoth
 from bs4 import BeautifulSoup
 
+
+custom_styles = """ i => cite
+                    p[style-name='summary'] => summary"""
+
+
 #convert word doc to an html file
-f = open("test_code_2.docx", 'rb')
-b = open('doc.html', 'wb')
-document = mammoth.convert_to_html(f)
-b.write(document.value.encode('utf8'))
-f.close()
-b.close()
+
+with open("test_code.docx", "rb") as docx_file:
+    result = mammoth.convert_to_html(docx_file, style_map = custom_styles)
+    text = result.value
+    with open('doc.html', 'w') as html_file:
+        html_file.write(text)
+
 
 #parse the html created from the word doc
 with open("doc.html") as fp:
@@ -29,6 +35,7 @@ with open("doc_output.html", "w") as file:
 #combine the header, main and footer sections into a prettified html page
 with open("page.html", "w") as file:
     file.write(str((soup1.prettify())+(soup.prettify())+(soup2.prettify())))
+
 
 
 #clean up the generated html page into filedata
