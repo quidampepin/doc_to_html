@@ -20,6 +20,10 @@ custom_styles = """ i => cite
                     p[style-name='label-warning'] => span.label-warning
                     p[style-name='label-danger'] => span.label-danger
                     p[style-name='alert-text'] => alert > p
+                    p[style-name='subway-group-h1'] => nav.gc-subway > h1
+                    p[style-name='subway-section-h1'] => nav > h1.gc-thickline
+                    p[style-name='subway-nav'] => li.hidden-xs:fresh
+                    p[style-name='subway-nav-active'] => li.active
                     p[style-name='summary'] => summary"""
 
 
@@ -85,7 +89,13 @@ with open("page.html", "r") as file:
     filedata = filedata.replace('class="label-info', 'class="label label-info')
     filedata = filedata.replace('class="label-warning', 'class="label label-warning')
     filedata = filedata.replace('class="label-danger', 'class="label label-danger')
-
+    filedata = filedata.replace('class="gc-subway', 'class="provisional gc-subway')
+    filedata = filedata.replace('<h1 class="gc-thickline">', '<h1 property="name" id="wb-cont" class="gc-thickline">')
+    filedata = filedata.replace('</main>\n   </ul>\n  </nav>\n </body>\n</html><nav class="provisional gc-subway">\n <h1>\n', '<nav class="provisional gc-subway">\n <h1 id="gc-document-nav">\n')
+    filedata = filedata.replace('<nav>\n <h1 property="name"', '</ul>\n </nav>\n <h1 property="name"')
+    filedata = filedata.replace('<li class="active">\n <a href=', '<li><a class="active" aria-current="page" href=')
+    filedata = filedata.replace('</nav>\n<li class="hidden-xs">\n', '<ul>\n<li class="hidden-xs">\n')
+    filedata = filedata.replace('class="hidden-xs"', 'class="hidden-xs hidden-sm"')
 
 
 #write the cleaned up filedata to the html page
