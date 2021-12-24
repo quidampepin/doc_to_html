@@ -71,7 +71,7 @@ with open("page.html", "r") as file:
     filedata = filedata.replace('</script>\n  </link>\n </head>\n', '</script>\n </head>\n')
     filedata = filedata.replace('<link href="https://www.canada.ca/etc/designs/canada/wet-boew/assets/wmms-blk.svg" property="logo"/>\n           </meta>\n          </meta>\n', '<link href="https://www.canada.ca/etc/designs/canada/wet-boew/assets/wmms-blk.svg" property="logo"/>\n')
     filedata = filedata.replace('<div class="par iparys_inherited">\n</div>\n<div class="par iparys_inherited">\n', '</main>\n<div class="par iparys_inherited">\n</div>\n<div class="par iparys_inherited">\n')
-    filedata = filedata.replace('\n </a>\n ', '</a>')
+    filedata = filedata.replace('\n </a>\n ', '</a> ')
     filedata = filedata.replace('<h3>\n On this page\n</h3>', '<h2 class="h3">\n On this page\n</h2>')
     filedata = filedata.replace('<summary>\n', '<details>\n<summary>\n')
     filedata = filedata.replace('<details>\n end\n</details>\n', '</details>\n')
