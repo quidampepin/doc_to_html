@@ -27,9 +27,12 @@ custom_styles = """ i => cite
                     p[style-name='summary'] => summary"""
 
 
+
+file = input("Enter file name:")
+
 #convert word doc to an html file
 
-with open("test_code_4.docx", "rb") as docx_file:
+with open(file, "rb") as docx_file:
     result = mammoth.convert_to_html(docx_file, style_map = custom_styles)
     text = result.value
     with open('doc.html', 'w') as html_file:
@@ -96,6 +99,10 @@ with open("page.html", "r") as file:
     filedata = filedata.replace('<li class="active">\n <a href=', '<li><a class="active" aria-current="page" href=')
     filedata = filedata.replace('</nav>\n<li class="hidden-xs">\n', '<ul>\n<li class="hidden-xs">\n')
     filedata = filedata.replace('class="hidden-xs"', 'class="hidden-xs hidden-sm"')
+    filedata = filedata.replace('<h2>\n <a id=', '<h2 id=')
+    filedata = filedata.replace('<h3>\n <a id=', '<h3 id=')
+    filedata = filedata.replace('<h4>\n <a id=', '<h4 id=')
+    filedata = filedata.replace('"></a>', '">')
 
 
 #write the cleaned up filedata to the html page

@@ -17,9 +17,9 @@ To use the expand collapse:
 Alerts need a heading. Apply the right alert style to the heading (alert-info, alert-warning, alert-danger, etc.), and apply "alert-text" to the text within the alert.
 
 ## Running the script
-- Have the doc file in the same folder where you have the script
-- Modify the script so that "with open("test_code_4.docx", "rb") as docx_file" points to the right file name
+- have the doc file in the same folder where you have the script
 - run  the script: python3 doc_to_html.py
+- type in the name of the document (example: test_code.docx)
 - this will create "page.html"
 
 ## Using the HTML in a prototype
