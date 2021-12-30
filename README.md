@@ -17,11 +17,11 @@ To use the expand collapse:
 Alerts need a heading. Apply the right alert style to the heading (alert-info, alert-warning, alert-danger, etc.), and apply "alert-text" to the text within the alert.
 
 ## Running the script
-- have the doc file in the same folder where you have the script
-- run  the script: python3 doc_to_html.py
-- type in the name of the document (example: test_code.docx)
-- this will create "page.html"
+- you need Python 3 and a few packages to run the script (see code)
+- run  the script: app.py
+- select a docx document
+- this will create a page that will show the whole code in expand-collapse and the fully prototyped page
 
 ## Using the HTML in a prototype
 - if in AEM, only paste the middle part (after the H1, before the footer)
-- if in GitHub, paste the whole HTML in a file - it should create an entire Canada.ca page
+- if in GitHub, paste the whole HTML in a file - it will create an entire Canada.ca page
