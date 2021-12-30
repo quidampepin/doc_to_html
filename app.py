@@ -130,6 +130,7 @@ def html_convert():
         filedata = filedata.replace('\\u202f', '&nbsp;')
         filedata = filedata.replace('\\u201c', '&ldquo;')
         filedata = filedata.replace('\\u201d', '&rdquo;')
+        filedata = filedata.replace('>>', '>')
 
 
     #write the cleaned up filedata to the html page

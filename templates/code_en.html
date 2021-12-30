@@ -144,6 +144,19 @@
          	"lngLinks": [{"lang": "fr",	"href": "#", "text": "Français"}]
          });
       </script>
+
+      <script>
+      function CopyToClipboard(id)
+      {
+      var r = document.createRange();
+      r.selectNode(document.getElementById(id));
+      window.getSelection().removeAllRanges();
+      window.getSelection().addRange(r);
+      document.execCommand('copy');
+      window.getSelection().removeAllRanges();
+      }
+      </script>
+
       <main role="main" property="mainContentOfPage" class="container wb-prettify all-pre">
 
          <h1>From DOCX to HTML</h1>
@@ -166,7 +179,9 @@
 <h2>Code for prototype</h2>
            <details>
  <summary>Code</summary>
- <pre class="prettyprint"><code>{{html_page}}
+ <button class="btn btn-default" onclick="CopyToClipboard('myCode');return false;">Copy code to clipboard</button>
+ <pre class="prettyprint">
+   <code id="myCode">{{html_page}}
 </code></pre></details>
 
 <h2>Prototyped page</h2>
