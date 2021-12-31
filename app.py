@@ -155,21 +155,32 @@ def html_convert():
         filedata = filedata.replace('\\xf4', '&ocirc;')
         filedata = filedata.replace('\\xf6', '&ouml;')
         filedata = filedata.replace('>>', '>')
+        filedata2 = filedata.split('<!--CONTENT STARTS HERE-->')
+        filedata2 = filedata2[1]
+        filedata3 = filedata2.split('<!-- CONTENT ENDS HERE -->')
+        filedata3 = filedata3[0]
 
     #write the cleaned up filedata to the html page
     with open('templates/page.html', 'w') as file:
       file.write(filedata)
 
+    with open('templates/page_aem.html', 'w') as file:
+      file.write(filedata3)
+
     with open("templates/page.html") as fp:
          page_soup= BeautifulSoup(fp, 'html.parser')
 
+    with open("templates/page_aem.html") as fp:
+         pageaem_soup= BeautifulSoup(fp, 'html.parser')
+
 
     html_page = page_soup.prettify()
+    aem_page = pageaem_soup.prettify()
 
     lang = request.args.get('lang', 'en')
 
     if lang == 'en':
-        return render_template("code_en.html", lang=lang, html_page=html_page)
+        return render_template("code_en.html", lang=lang, html_page=html_page, aem_page=aem_page)
 
     if lang == 'fr':
         return render_template("code_fr.html", lang=lang)
