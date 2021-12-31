@@ -83,7 +83,6 @@ def html_convert():
         file.write(str((soup1.prettify())+(soup.prettify())+(soup2.prettify())))
 
 
-
     #clean up the generated html page into filedata
     with open("templates/page.html", "r") as file:
         filedata = file.read()
@@ -125,7 +124,8 @@ def html_convert():
         filedata = filedata.replace('<h3>\n <a id=', '<h3 id=')
         filedata = filedata.replace('<h4>\n <a id=', '<h4 id=')
         filedata = filedata.replace('"></a', '">')
-        filedata = filedata.replace('\n </strong>', '\n</strong>')
+        filedata = filedata.replace('\n <strong>\n  ', '\n<strong>\n')
+        filedata = filedata.replace('\n </strong>\n ', '\n</strong>\n')
         filedata = filedata.replace('\\xa0', '&nbsp;')
         filedata = filedata.replace('\\u2019', '&rsquo;')
         filedata = filedata.replace('\\u202f', '&nbsp;')
