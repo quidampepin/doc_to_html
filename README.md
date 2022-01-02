@@ -16,9 +16,10 @@ To use the expand collapse:
 ### Alerts
 Alerts need a heading. Apply the right alert style to the heading (alert-info, alert-warning, alert-danger, etc.), and apply "alert-text" to the text within the alert.
 
-## Running the script
+## Running the web app
 - you need Python 3 and a few packages to run the script (see code)
 - run  the script: app.py
+- go to http://127.0.0.1:5000/ in a web browser
 - select a docx document
 - this will create a page that will show the whole code in expand-collapse and the fully prototyped page
 
