@@ -47,13 +47,14 @@
       </style>
    </head>
    <body vocab="http://schema.org/" typeof="WebPage">
+     <!--
       <section class="experimental alpha-top">
          <h2 class="wb-inv">Alpha</h2>
          <div class="container">
             <small><label class="alpha-label">Alpha</label>&nbsp;&nbsp;
             Ceci est une version expérimentale de Canada.ca destinée à être testée par le public.</small>
          </div>
-      </section>
+      </section> -->
       <div id="def-top">
          <!-- Write closure fall-back static file -->
          <!-- /ROOT/app/cls/WET/gcweb/v4_0_30/cdts/static/appTop-fr.html -->
@@ -164,9 +165,14 @@
          <div class="container">
 
            <h2>Téléverser document DOCX</h2>
+           <p>Choisissez un fichier Word pour le convertir en HTML :</p>
            <form method="POST" action="/html_convert?&lang=fr" enctype="multipart/form-data">
-             <p><input type="file" name="file" accept=".doc,.docx"></p>
-             <p><input type="submit" value="Soumettre"></p>
+            <div>
+                <label for="files" class="btn btn-primary">Choisir un fichier</label>
+                <input  id="files" style="visibility:hidden;" type="file" name="file" accept=".doc,.docx" onchange="form.submit()"/>
+              </div>
        </form>
+
+
 
  </div>

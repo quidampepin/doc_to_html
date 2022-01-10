@@ -163,9 +163,14 @@
          <div class="container">
 
            <h2>Upload DOCX</h2>
+
+           <p>Select a Word document to convert it to HTML:</p>
            <form method="POST" action="/html_convert" enctype="multipart/form-data">
-             <p><input type="file" name="file" accept=".doc,.docx"></p>
-             <p><input type="submit" value="Submit"></p>
+            <div>
+                <label for="files" class="btn btn-primary">Select file</label>
+                <input  id="files" style="visibility:hidden;" type="file" name="file" accept=".doc,.docx" onchange="form.submit()"/>
+              </div>
+
        </form>
 
  </div>
