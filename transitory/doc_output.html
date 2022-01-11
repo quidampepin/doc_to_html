@@ -1,84 +1,389 @@
 <h1>
- Title of the report \u2013 Global Talent Stream
+ Basic template
 </h1>
 <p>
- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec adipiscing tristique risus nec feugiat in.
+ This is the start of the actual content
 </p>
-<h2>
- Table of contents
-</h2>
+<h3>
+ On this page
+</h3>
 <ul>
  <li>
-  <a href="#_Section_1">
-   Section 1
+  <a href="#_Basic_formatting">
+   Basic formatting
   </a>
  </li>
  <li>
-  <a href="#_Section_2">
-   Section 2
+  <a href="#_Bullet_list">
+   Bullet list
   </a>
  </li>
  <li>
-  <a href="#_Section_3">
-   Section 3
+  <a href="#_Expand-collapse">
+   Expand collapse
+  </a>
+ </li>
+ <li>
+  <a href="#_Buttons">
+   Buttons
+  </a>
+ </li>
+ <li>
+  <a href="#_Alerts">
+   Alerts
+  </a>
+ </li>
+ <li>
+  <a href="#_Tables">
+   Tables
+  </a>
+ </li>
+ <li>
+  <a href="#_Labels">
+   Labels
   </a>
  </li>
 </ul>
 <h2>
- <a id="_Section_1">
+ <a id="_Basic_formatting">
  </a>
- Section 1
+ Basic formatting
 </h2>
 <p>
- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec adipiscing tristique risus nec feugiat in.
+ This text is in\xa0
+ <strong>
+  bold
+ </strong>
+ .
 </p>
 <p>
- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec adipiscing tristique risus nec feugiat in.
+ This is the\xa0
+ <cite>
+  cite tag
+ </cite>
+ , used for things such as referencing an act with its official name like the\xa0
+ <cite>
+  Employment Insurance Act
+ </cite>
+ .
 </p>
-<h3>
- Section 1.1
-</h3>
 <p>
- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec adipiscing tristique risus nec feugiat in.
-</p>
-<p>
- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec adipiscing tristique risus nec feugiat in.
+ This is a simple\xa0
+ <a href="https://test.canada.ca/service-canada/templates/template-basic-en.html">
+  hyperlink to something else
+ </a>
+ , and a\xa0
+ <a href="mailto:email@example.com">
+  email link
+ </a>
+ .
 </p>
 <h2>
- <a id="_Section_2">
+ <a id="_Bullet_list">
  </a>
- Section 2
+ Bullet list
 </h2>
-<p>
- <a href="http://www.canada.ca">
-  Lorem
+<h3>
+ Unordered list
+</h3>
+<ul>
+ <li>
+  item 1
+ </li>
+ <li>
+  item 2
+ </li>
+</ul>
+<h3>
+ Ordered list
+</h3>
+<ol>
+ <li>
+  item 1
+ </li>
+ <li>
+  item 2
+ </li>
+</ol>
+<h2>
+ <a id="_Expand-collapse">
  </a>
- ipsum dolor sit amet, consectetus r adipiscing elit, seds do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec adipiscing' tristique risus nec feugiat in.
+ Expand-collapse
+</h2>
+<h3>
+ Single expand-collapse
+</h3>
+<summary>
+ Summary of the item
+</summary>
+<p>
+ Include any code in the hidden section before you close the details tag
 </p>
-<section class="alert-danger">
+<details>
+ end
+</details>
+<h3>
+ Multiple expand-collapses in a list
+</h3>
+<summary>
+ Item 1
+</summary>
+<p>
+ Content for item 1.
+</p>
+<p>
+ I also want to add a:
+</p>
+<a class="btn-call-to-action">
+ Call to action
+</a>
+<details>
+ end
+</details>
+<summary>
+ Item 2
+</summary>
+<p>
+ I want a bullet list in that expand-collapse:
+</p>
+<ul>
+ <li>
+  bullet 1
+ </li>
+ <li>
+  bullet 2
+ </li>
+ <li>
+  bullet 3
+ </li>
+</ul>
+<details>
+ end
+</details>
+<summary>
+ Item 3
+</summary>
+<p>
+ For this one, I want an expand-collapse within an expand-collapse:
+</p>
+<summary>
+ Nested collapse
+</summary>
+<section class="alert-warning">
  <h2>
-  Mega alert
+  Very important warning
  </h2>
 </section>
 <alert>
  <p>
-  Don't go past this point!
+  You need to see this!
+ </p>
+</alert>
+<details>
+ end
+</details>
+<details>
+ end
+</details>
+<h2>
+ <a id="_Buttons">
+ </a>
+ Buttons
+</h2>
+<a class="btn-call-to-action">
+ <a href="http://www.canada.ca">
+  Super-task button
+ </a>
+</a>
+<a class="btn-primary">
+ <a href="http://www.canada.ca">
+  Primary button
+ </a>
+</a>
+<a class="btn-default">
+ <a href="http://www.canada.ca">
+  Secondary button
+ </a>
+</a>
+<a class="btn-danger">
+ <a href="http://www.canada.ca">
+  Danger button
+ </a>
+</a>
+<h2>
+ <a id="_Alerts">
+ </a>
+ Alerts
+</h2>
+<section class="alert-danger">
+ <h2>
+  Danger alert
+ </h2>
+</section>
+<alert>
+ <p>
+  For dangerous situations or technical issues
+ </p>
+</alert>
+<section class="alert-warning">
+ <h2>
+  Warning alert
+ </h2>
+</section>
+<alert>
+ <p>
+  To warn people of consequences of actions or inactions
+ </p>
+</alert>
+<section class="alert-info">
+ <h2>
+  Info alert
+ </h2>
+</section>
+<alert>
+ <p>
+  To draw attention to a clarification
+ </p>
+</alert>
+<section class="alert-success">
+ <h2>
+  Success alert
+ </h2>
+</section>
+<alert>
+ <p>
+  To draw attention to a successful action, like confirming a submission
  </p>
 </alert>
 <h2>
- <a id="_Section_3">
+ <a id="_Tables">
  </a>
- Section 3
+ Tables
 </h2>
-<p>
- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec adipiscing tristique risus nec feugiat in.
-</p>
-<button class="btn-call-to-action">
- Start
-</button>
-<h3>
- Section 3.1
-</h3>
-<h4>
- Section 3.1.1
-</h4>
+<table>
+ <tr>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+ </tr>
+</table>
+<h2>
+ <a id="_Labels">
+ </a>
+ Labels
+</h2>
+<span class="label-default">
+ Default
+</span>
+<span class="label-primary">
+ Primary
+</span>
+<span class="label-success">
+ Success
+</span>
+<span class="label-info">
+ Information
+</span>
+<span class="label-warning">
+ Warning
+</span>
+<span class="label-danger">
+ Danger
+</span>
+<h2>
+ Checkboxes
+</h2>
+<ul>
+ <li>
+  checkbox 1
+ </li>
+ <li>
+  checkbox 2
+ </li>
+ <li>
+  checkbox 3
+ </li>
+</ul>

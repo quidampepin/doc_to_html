@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html class="no-js" dir="ltr" lang="fr">
- <head>
+<!--[if lt IE 9]>
+<html class="no-js lt-ie9" dir="ltr" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" dir="ltr" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+ <!--<![endif]-->
+ <head prefix="og: http://ogp.me/ns#">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
   <meta charset="utf-8"/>
-  <!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW) wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
   <!--CHANGE THE TITLE-->
   <title>
-   Titre de la page
+   Title of the page - Canada.ca
   </title>
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
   <meta content=" " name="description">
@@ -22,12 +27,12 @@
    <ul id="wb-tphp">
     <li class="wb-slc">
      <a class="wb-sl" href="#wb-cont">
-      Passer au contenu principal
+      Skip to main content
      </a>
     </li>
     <li class="wb-slc visible-sm visible-md visible-lg">
      <a class="wb-sl" href="#wb-info">
-      Passer à « À propos de ce site  »
+      Skip to "About government"
      </a>
     </li>
    </ul>
@@ -37,46 +42,52 @@
     <div class="row">
      <section class="col-xs-3 col-sm-12 pull-right text-right" id="wb-lng">
       <h2 class="wb-inv">
-       Sélection de la langue
+       Language selection
       </h2>
-      <ul class="list-inline mrgn-bttm-0">
-       <li>
-        <a href="/covid-19-guidance/proto/travel/travel-2.0/exemption-finder.html" hreflang="en" lang="en">
-         <span class="hidden-xs hidden-sm">
-          English
-         </span>
-         <abbr class="visible-xs h3 mrgn-tp-sm mrgn-bttm-0 text-uppercase" title="English">
-          en
-         </abbr>
-        </a>
-       </li>
-      </ul>
+      <div class="row">
+       <div class="col-md-12">
+        <ul class="list-inline mrgn-bttm-0">
+         <li>
+          <a href="#" lang="fr">
+           <span class="hidden-xs hidden-sm">
+            Français
+           </span>
+           <abbr class="visible-xs h3 mrgn-tp-sm mrgn-bttm-0 text-uppercase" title="Français">
+            fr
+           </abbr>
+          </a>
+         </li>
+        </ul>
+       </div>
+      </div>
      </section>
      <div class="brand col-xs-9 col-sm-5 col-md-4" property="publisher" typeof="GovernmentOrganization">
-      <a href="#" property="url">
-       <img alt="Gouvernement du Canada" property="logo" src="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/assets/sig-blk-fr.svg"/>
-       <span class="wb-inv">
-        /
-        <span lang="en">
-         Government of Canada
-        </span>
-       </span>
+      <a href="/en.html" property="url">
+       <img alt="Government of Canada" property="logo" src="https://www.canada.ca/etc/designs/canada/wet-boew/assets/sig-blk-en.svg"/>
       </a>
-      <meta content="Gouvernement du Canada" property="name"/>
-      <meta content="Canada" property="areaServed" typeof="Country">
-       <link href="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/assets/wmms-blk.svg" property="logo"/>
+      <meta content="Government of Canada" property="name">
+       <meta content="Canada" property="areaServed" typeof="Country">
+        <link href="https://www.canada.ca/etc/designs/canada/wet-boew/assets/wmms-blk.svg" property="logo"/>
+       </meta>
       </meta>
      </div>
      <section class="col-lg-offset-4 col-md-offset-4 col-sm-offset-2 col-xs-12 col-sm-5 col-md-4" id="wb-srch">
       <h2>
-       Recherche
+       Search
       </h2>
-      <form action="#" method="post" name="cse-search-box" role="search">
+      <form action="/en/sr/srb.html" method="get" name="cse-search-box" role="search">
        <div class="form-group wb-srch-qry">
         <label class="wb-inv" for="wb-srch-q">
-         Rechercher dans Canada.ca
+         Search Canada.ca
         </label>
-        <input class="wb-srch-q form-control" id="wb-srch-q" list="wb-srch-q-ac" maxlength="170" name="q" placeholder="Rechercher dans Canada.ca" size="34" type="search" value=""/>
+        <input name="cdn" type="hidden" value="canada"/>
+        <input name="st" type="hidden" value="s"/>
+        <input name="num" type="hidden" value="10"/>
+        <input name="langs" type="hidden" value="en"/>
+        <input name="st1rt" type="hidden" value="1"/>
+        <input name="s5bm3ts21rch" type="hidden" value="x"/>
+        <input class="wb-srch-q form-control" id="wb-srch-q" list="wb-srch-q-ac" maxlength="170" name="q" placeholder="Search Canada.ca" size="34" type="search" value=""/>
+        <input name="_charset_" type="hidden" value="UTF-8"/>
         <datalist id="wb-srch-q-ac">
         </datalist>
        </div>
@@ -85,7 +96,7 @@
          <span class="glyphicon-search glyphicon">
          </span>
          <span class="wb-inv">
-          Recherche
+          Search
          </span>
         </button>
        </div>
@@ -93,93 +104,101 @@
      </section>
     </div>
    </div>
-   <nav class="gcweb-menu" typeof="SiteNavigationElement">
+   <nav class="gcweb-v2 gcweb-menu" typeof="SiteNavigationElement">
     <div class="container">
      <h2 class="wb-inv">
       Menu
      </h2>
      <button aria-expanded="false" aria-haspopup="true" type="button">
-      Menu
       <span class="wb-inv">
-       principal
+       Main
       </span>
+      Menu
       <span class="expicon glyphicon glyphicon-chevron-down">
       </span>
      </button>
-     <ul aria-orientation="vertical" data-ajax-replace="https://www.canada.ca/content/dam/canada/sitemenu/sitemenu-v2-fr.html" role="menu">
+     <ul aria-orientation="vertical" data-ajax-replace="/content/dam/canada/sitemenu/sitemenu-v2-en.html" role="menu">
       <li role="presentation">
-       <a href="https://www.canada.ca/fr/services/emplois.html" role="menuitem">
-        Emplois et milieu de travail
+       <a href="https://www.canada.ca/en/services/jobs.html" role="menuitem" tabindex="-1">
+        Jobs and the workplace
        </a>
       </li>
       <li role="presentation">
-       <a href="https://www.canada.ca/fr/services/immigration-citoyennete.html" role="menuitem">
-        Immigration et citoyenneté
+       <a href="https://www.canada.ca/en/services/immigration-citizenship.html" role="menuitem" tabindex="-1">
+        Immigration
+									and citizenship
        </a>
       </li>
       <li role="presentation">
-       <a href="https://voyage.gc.ca/" role="menuitem">
-        Voyage et tourisme
+       <a href="https://travel.gc.ca/" role="menuitem" tabindex="-1">
+        Travel
+									and
+									tourism
        </a>
       </li>
       <li role="presentation">
-       <a href="https://www.canada.ca/fr/services/entreprises.html" role="menuitem">
-        Entreprises et industrie
+       <a href="https://www.canada.ca/en/services/business.html" role="menuitem" tabindex="-1">
+        Business and industry
        </a>
       </li>
       <li role="presentation">
-       <a href="https://www.canada.ca/fr/services/prestations.html" role="menuitem">
-        Prestations
+       <a href="https://www.canada.ca/en/services/benefits.html" role="menuitem" tabindex="-1">
+        Benefits
        </a>
       </li>
       <li role="presentation">
-       <a href="https://www.canada.ca/fr/services/sante.html" role="menuitem">
-        Santé
+       <a href="https://www.canada.ca/en/services/health.html" role="menuitem" tabindex="-1">
+        Health
        </a>
       </li>
       <li role="presentation">
-       <a href="https://www.canada.ca/fr/services/impots.html" role="menuitem">
-        Impôts
+       <a href="https://www.canada.ca/en/services/taxes.html" role="menuitem" tabindex="-1">
+        Taxes
        </a>
       </li>
       <li role="presentation">
-       <a href="https://www.canada.ca/fr/services/environnement.html" role="menuitem">
-        Environnement et ressources naturelles
+       <a href="https://www.canada.ca/en/services/environment.html" role="menuitem" tabindex="-1">
+        Environment and natural
+									resources
        </a>
       </li>
       <li role="presentation">
-       <a href="https://www.canada.ca/fr/services/defense.html" role="menuitem">
-        Sécurité nationale et défense
+       <a href="https://www.canada.ca/en/services/defence.html" role="menuitem" tabindex="-1">
+        National security and
+									defence
        </a>
       </li>
       <li role="presentation">
-       <a href="https://www.canada.ca/fr/services/culture.html" role="menuitem">
-        Culture, histoire et sport
+       <a href="https://www.canada.ca/en/services/culture.html" role="menuitem" tabindex="-1">
+        Culture, history and sport
        </a>
       </li>
       <li role="presentation">
-       <a href="https://www.canada.ca/fr/services/police.html" role="menuitem">
-        Services de police, justice et urgences
+       <a href="https://www.canada.ca/en/services/policing.html" role="menuitem" tabindex="-1">
+        Policing, justice and
+									emergencies
        </a>
       </li>
       <li role="presentation">
-       <a href="https://www.canada.ca/fr/services/transport.html" role="menuitem">
-        Transport et infrastructure
+       <a href="https://www.canada.ca/en/services/transport.html" role="menuitem" tabindex="-1">
+        Transport and
+									infrastructure
        </a>
       </li>
       <li role="presentation">
-       <a href="https://international.gc.ca/world-monde/index.aspx?lang=fra" role="menuitem">
-        Canada et le monde
+       <a href="http://international.gc.ca/world-monde/index.aspx?lang=eng" role="menuitem" tabindex="-1">
+        Canada and the
+									world
        </a>
       </li>
       <li role="presentation">
-       <a href="https://www.canada.ca/fr/services/finance.html" role="menuitem">
-        Argent et finances
+       <a href="https://www.canada.ca/en/services/finance.html" role="menuitem" tabindex="-1">
+        Money and finances
        </a>
       </li>
       <li role="presentation">
-       <a href="https://www.canada.ca/fr/services/science.html" role="menuitem">
-        Science et innovation
+       <a href="https://www.canada.ca/en/services/science.html" role="menuitem" tabindex="-1">
+        Science and innovation
        </a>
       </li>
      </ul>
@@ -187,13 +206,13 @@
    </nav>
    <!--UPDATE THE BREADCRUMB-->
    <nav id="wb-bc" property="breadcrumb">
-    <h2>
-     Vous êtes ici :
+    <h2 class="wb-inv">
+     You are here:
     </h2>
     <div class="container">
      <ol class="breadcrumb">
       <li>
-       <a href="https://www.canada.ca/fr.html">
+       <a href="/en.html">
         Canada.ca
        </a>
       </li>
@@ -211,280 +230,609 @@
   </main>
  </body>
 </html><h1>
- Title of the report &ndash; Global Talent Stream
+ Basic template
 </h1>
 <p>
- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec adipiscing tristique risus nec feugiat in.
+ This is the start of the actual content
 </p>
-<h2>
- Table of contents
+<h2 class="h3">
+ On this page
 </h2>
 <ul>
  <li>
-  <a href="#_Section_1">
-   Section 1
+  <a href="#_Basic_formatting">
+   Basic formatting
   </a>
  </li>
  <li>
-  <a href="#_Section_2">
-   Section 2
+  <a href="#_Bullet_list">
+   Bullet list
   </a>
  </li>
  <li>
-  <a href="#_Section_3">
-   Section 3
+  <a href="#_Expand-collapse">
+   Expand collapse
+  </a>
+ </li>
+ <li>
+  <a href="#_Buttons">
+   Buttons
+  </a>
+ </li>
+ <li>
+  <a href="#_Alerts">
+   Alerts
+  </a>
+ </li>
+ <li>
+  <a href="#_Tables">
+   Tables
+  </a>
+ </li>
+ <li>
+  <a href="#_Labels">
+   Labels
   </a>
  </li>
 </ul>
-<h2 id="_Section_1"> Section 1
+<h2 id="_Basic_formatting"> Basic formatting
 </h2>
 <p>
- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec adipiscing tristique risus nec feugiat in.
+ This text is in&nbsp;
+<strong>
+bold
+</strong>
+.
 </p>
 <p>
- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec adipiscing tristique risus nec feugiat in.
+ This is the&nbsp;
+ <cite>
+  cite tag
+ </cite>
+ , used for things such as referencing an act with its official name like the&nbsp;
+ <cite>
+  Employment Insurance Act
+ </cite>
+ .
 </p>
+<p>
+ This is a simple&nbsp;
+ <a href="https://test.canada.ca/service-canada/templates/template-basic-en.html">
+  hyperlink to something else</a> , and a&nbsp;
+ <a href="mailto:email@example.com">
+  email link</a> .
+</p>
+<h2 id="_Bullet_list"> Bullet list
+</h2>
 <h3>
- Section 1.1
+ Unordered list
 </h3>
-<p>
- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec adipiscing tristique risus nec feugiat in.
-</p>
-<p>
- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec adipiscing tristique risus nec feugiat in.
-</p>
-<h2 id="_Section_2"> Section 2
+<ul>
+ <li>
+  item 1
+ </li>
+ <li>
+  item 2
+ </li>
+</ul>
+<h3>
+ Ordered list
+</h3>
+<ol>
+ <li>
+  item 1
+ </li>
+ <li>
+  item 2
+ </li>
+</ol>
+<h2 id="_Expand-collapse"> Expand-collapse
 </h2>
+<h3>
+ Single expand-collapse
+</h3>
+<details>
+<summary>
+ Summary of the item
+</summary>
 <p>
- <a href="http://www.canada.ca">
-  Lorem</a> ipsum dolor sit amet, consectetus r adipiscing elit, seds do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec adipiscing' tristique risus nec feugiat in.
+ Include any code in the hidden section before you close the details tag
 </p>
-<section class="alert alert-danger">
+</details>
+<h3>
+ Multiple expand-collapses in a list
+</h3>
+<details>
+<summary>
+ Item 1
+</summary>
+<p>
+ Content for item 1.
+</p>
+<p>
+ I also want to add a:
+</p>
+<a class="btn-call-to-action">
+ Call to action
+</a>
+</details>
+<details>
+<summary>
+ Item 2
+</summary>
+<p>
+ I want a bullet list in that expand-collapse:
+</p>
+<ul>
+ <li>
+  bullet 1
+ </li>
+ <li>
+  bullet 2
+ </li>
+ <li>
+  bullet 3
+ </li>
+</ul>
+</details>
+<details>
+<summary>
+ Item 3
+</summary>
+<p>
+ For this one, I want an expand-collapse within an expand-collapse:
+</p>
+<details>
+<summary>
+ Nested collapse
+</summary>
+<section class="alert alert-warning">
  <h2>
-  Mega alert
+  Very important warning
  </h2>
  <p>
-  Don't go past this point!
+  You need to see this!
  </p>
 </section>
-<h2 id="_Section_3"> Section 3
+</details>
+</details>
+<h2 id="_Buttons"> Buttons
 </h2>
-<p>
- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec adipiscing tristique risus nec feugiat in.
-</p>
-<button class="btn btn-call-to-action">
- Start
-</button>
-<h3>
- Section 3.1
-</h3>
-<h4>
- Section 3.1.1
-</h4><!-- CONTENT ENDS HERE -->
-<div class="clearfix">
-</div>
-<div class="pagedetails">
- <div class="row">
-  <div class="col-sm-6 col-md-5 col-lg-4">
-   <details class="brdr-0">
-    <summary class="btn btn-default text-center">
-     Signaler un problème sur cette page
-    </summary>
-    <div class="well row">
-     <div class="gc-rprt-prblm">
-      <div class="gc-rprt-prblm-frm gc-rprt-prblm-tggl">
-       <form action="#">
-        <fieldset>
-         <legend>
-          <span class="field-name">
-           Veuillez cocher toutes les réponses pertinentes :
-          </span>
-         </legend>
-         <div class="checkbox">
-          <label for="gc-rprt-prblm-f1">
-           <input id="gc-rprt-prblm-f1" name="problem1" type="checkbox" value="Oui"/>
-           Un lien, un bouton ou une vidéo ne fonctionne pas
-          </label>
-          <input name="problem1" type="hidden" value="Non"/>
-         </div>
-         <div class="checkbox">
-          <label for="gc-rprt-prblm-f2">
-           <input id="gc-rprt-prblm-f2" name="problem2" type="checkbox" value="Oui"/>
-           Il y a une erreur d'orthographe ou de grammaire
-          </label>
-          <input name="problem2" type="hidden" value="Non"/>
-         </div>
-         <div class="checkbox">
-          <label for="gc-rprt-prblm-f3">
-           <input id="gc-rprt-prblm-f3" name="problem3" type="checkbox" value="Oui"/>
-           Les renseignements sont incomplets
-          </label>
-          <input name="problem3" type="hidden" value="Non"/>
-         </div>
-         <div class="checkbox">
-          <label for="gc-rprt-prblm-f4">
-           <input id="gc-rprt-prblm-f4" name="problem4" type="checkbox" value="Oui"/>
-           L'information n'est plus à jour ou est erronée
-          </label>
-          <input name="problem4" type="hidden" value="Non"/>
-         </div>
-         <div class="checkbox">
-          <label for="gc-rprt-prblm-f5">
-           <input id="gc-rprt-prblm-f5" name="problem5" type="checkbox" value="Oui"/>
-           Je n'arrive pas à trouver ce que je cherche
-          </label>
-          <input name="problem5" type="hidden" value="Non"/>
-         </div>
-         <div class="checkbox">
-          <label for="gc-rprt-prblm-f6">
-           <input id="gc-rprt-prblm-f6" name="problem6" type="checkbox" value="Oui"/>
-           Autre problème qui ne figure pas sur cette liste
-          </label>
-          <input name="problem6" type="hidden" value="Non"/>
-         </div>
-        </fieldset>
-        <button class="btn btn-primary wb-toggle" data-toggle='{"stateOff": "hide", "stateOn": "show", "selector": ".gc-rprt-prblm-tggl"}' type="submit">
-         Soumettre
-        </button>
-       </form>
+<a class="btn btn-call-to-action" href="http://www.canada.ca">
+  Super-task button
+ </a>
+<a class="btn btn-primary" href="http://www.canada.ca">
+  Primary button
+ </a>
+<a class="btn btn-default" href="http://www.canada.ca">
+  Secondary button
+ </a>
+<a class="btn btn-danger" href="http://www.canada.ca">
+  Danger button
+ </a>
+<h2 id="_Alerts"> Alerts
+</h2>
+<section class="alert alert-danger">
+ <h2>
+  Danger alert
+ </h2>
+ <p>
+  For dangerous situations or technical issues
+ </p>
+</section>
+<section class="alert alert-warning">
+ <h2>
+  Warning alert
+ </h2>
+ <p>
+  To warn people of consequences of actions or inactions
+ </p>
+</section>
+<section class="alert alert-info">
+ <h2>
+  Info alert
+ </h2>
+ <p>
+  To draw attention to a clarification
+ </p>
+</section>
+<section class="alert alert-success">
+ <h2>
+  Success alert
+ </h2>
+ <p>
+  To draw attention to a successful action, like confirming a submission
+ </p>
+</section>
+<h2 id="_Tables"> Tables
+</h2>
+<table class="provisional gc-table table" id="myTable1">
+ <tr>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+ </tr>
+</table>
+<h2 id="_Labels"> Labels
+</h2>
+<span class="label label-default">
+ Default
+</span>
+<span class="label label-primary">
+ Primary
+</span>
+<span class="label label-success">
+ Success
+</span>
+<span class="label label-info">
+ Information
+</span>
+<span class="label label-warning">
+ Warning
+</span>
+<span class="label label-danger">
+ Danger
+</span>
+<h2>
+ Checkboxes
+</h2>
+<ul>
+ <li>
+  checkbox 1
+ </li>
+ <li>
+  checkbox 2
+ </li>
+ <li>
+  checkbox 3
+ </li>
+</ul><!-- CONTENT ENDS HERE -->
+<div class="mwsgeneric-base-html parbase section">
+ <div class="row row-no-gutters mrgn-tp-xl">
+  <div class="col-sm-7 col-lg-6">
+   <section class="gc-pg-hlpfl provisional">
+    <div class="well mrgn-bttm-0">
+     <form action="https://apps.canada.ca/x-notify/eml/send" autocomplete="off" id="gc-pg-hlpfl-frm" method="post">
+      <input name="pageTitle" type="hidden" value="Managing your business"/>
+      <input name="submissionPage" type="hidden" value="covid-19-guidance/proto/business/maintaining-your-business.html"/>
+      <input name="tid" type="hidden" value="tbs-wasthishelpfulen"/>
+      <input name="auke" type="hidden" value="NTQxNzE1OTA3NTgwMDYyOTQ="/>
+      <div class="gc-pg-hlpfl-btn">
+       <div class="row row-no-gutters">
+        <div class="col-xs-12 col-sm-7 mrgn-tp-sm">
+         <h2 class="mrgn-tp-sm h5">
+          Did you find what you were looking for?
+         </h2>
+        </div>
+        <div class="col-xs-8 col-sm-5 text-right">
+         <button class="btn btn-primary" data-gc-analytics-wtph="" data-wb-doaction='[
+                          {"action":"removeClass","source":".gc-pg-hlpfl-thnk","class":"hide"},
+                          {"action":"addClass","source":"#gc-pg-hlpfl-frm","class":"hide"}
+                        ]' data-wb5-click="postback@#gc-pg-hlpfl-frm@" name="helpful" type="submit" value="Yes">
+          Yes
+         </button>
+         <button class="btn btn-primary mrgn-lft-sm nojs-hide" data-gc-analytics-wtph-no="" data-wb-doaction='[
+                          {"action":"ajax","url":"/content/dam/canada/mws-swg/nohelpful.html","container":".gc-pg-hlpfl-yes"},
+                          {"action":"removeClass","source":".gc-pg-hlpfl-no","class":"nojs-show"},
+                          {"action":"addClass","source":".gc-pg-hlpfl-btn","class":"hide"}
+                        ]' type="button">
+          No
+         </button>
+        </div>
+       </div>
       </div>
-      <div class="gc-rprt-prblm-thnk gc-rprt-prblm-tggl hide">
-       <h3>
-        Merci de votre aide!
-       </h3>
-       <p>
-        Vous ne recevrez pas de réponse. Pour toute question, s’il vous plaît
-        <a href="https://www.canada.ca/fr/contact.html">
-         contactez-nous
-        </a>
-        .
+      <p class="h3 hidden nojs-show">
+       If not, tell us why:
+      </p>
+      <div class="gc-pg-hlpfl-no nojs-show">
+       <fieldset>
+        <legend class="h4 mrgn-tp-0 mrgn-bttm-md">
+         What was wrong?
+        </legend>
+        <div class="radio">
+         <label for="problem1">
+          <input data-gc-analytics-collect="notPrivate" data-gc-analytics-wtph-value="The answer I need is missing-La réponse dont j’ai besoin n’est pas là" id="problem1" name="problem" type="radio" value="The answer I need is missing"/>
+          The answer I need is missing
+         </label>
+        </div>
+        <div class="radio">
+         <label for="problem2">
+          <input data-gc-analytics-collect="notPrivate" data-gc-analytics-wtph-value="The information isn’t clear-L'information n'est pas claire" id="problem2" name="problem" type="radio" value="The information isn’t clear"/>
+          The information isn’t clear
+         </label>
+        </div>
+        <div class="radio">
+         <label for="problem3">
+          <input data-gc-analytics-collect="notPrivate" data-gc-analytics-wtph-value="I’m not in the right place-Je ne suis pas au bon endroit" id="problem3" name="problem" type="radio" value="I’m not in the right place"/>
+          I’m not in the right place
+         </label>
+        </div>
+        <div class="radio">
+         <label for="problem4">
+          <input data-gc-analytics-collect="notPrivate" data-gc-analytics-wtph-value="Something is broken or incorrect-Quelque chose est brisé ou incorrect" id="problem4" name="problem" type="radio" value="Something is broken or incorrect"/>
+          Something is broken or incorrect
+         </label>
+        </div>
+        <div class="radio">
+         <label for="problem5">
+          <input data-gc-analytics-collect="notPrivate" data-gc-analytics-wtph-value="Other reason-Autre raison" id="problem5" name="problem" type="radio" value="Other reason"/>
+          Other reason
+         </label>
+        </div>
+       </fieldset>
+       <label class="mrgn-bttm-0" for="problem6">
+        Please provide more details
+       </label>
+       <p class="small">
+        <strong>
+         (Don’t include any personal information)
+        </strong>
+        <br/>
+        <span class="small">
+         Maximum 300 characters
+        </span>
        </p>
+       <textarea class="full-width" id="problem6" maxlength="300" name="details"></textarea>
+       <button class="btn btn-primary mrgn-tp-md mrgn-bttm-sm" data-gc-analytics-wtph-submit="" data-wb-doaction='[
+                      {"action":"removeClass","source":".gc-pg-hlpfl-thnk","class":"hide"},
+                      {"action":"addClass","source":"#gc-pg-hlpfl-frm","class":"hide"}
+                    ]' data-wb5-click="postback@#gc-pg-hlpfl-frm@" name="helpful" type="submit" value="No">
+        Submit
+       </button>
       </div>
+      <div class="gc-pg-hlpfl-yes">
+       <input name="helpful" type="hidden" value="Yes"/>
+      </div>
+     </form>
+     <div class="gc-pg-hlpfl-thnk hide">
+      <p class="h6 mrgn-tp-sm mrgn-bttm-sm">
+       <span aria-hidden="true" class="far fa-check-circle text-success mrgn-rght-sm">
+       </span>
+       Thank you for your feedback
+      </p>
      </div>
     </div>
-   </details>
+   </section>
+  </div>
+  <div class="col-sm-3 col-sm-offset-1 col-lg-offset-3">
+   <div class="wb-share" data-wb-share='{"pnlId":"pnlShrPg", "lnkClass": "btn btn-default btn-block mrgn-tp-md"}'>
+   </div>
   </div>
  </div>
+ <!--update references-->
+</div>
+<div class="mwsgeneric-base-html parbase section">
+ <!--update references-->
+</div>
+<div class="pagedetails">
  <dl id="wb-dtmd">
   <dt>
-   Date de modification :
+   Date modified:
   </dt>
   <dd>
    <time property="dateModified">
-    2021-05-20
+    2021-11-30
    </time>
   </dd>
  </dl>
 </div>
-<footer id="wb-info">
- <div class="landscape">
-  <nav class="container wb-navcurr">
-   <h2 class="wb-inv">
-    Au sujet du gouvernement
-   </h2>
-   <ul class="list-unstyled colcount-sm-2 colcount-md-3">
-    <li>
-     <a href="https://www.canada.ca/fr/contact.html">
-      Contactez-nous
-     </a>
-    </li>
-    <li>
-     <a href="https://www.canada.ca/fr/gouvernement/min.html">
-      Ministères et organismes
-     </a>
-    </li>
-    <li>
-     <a href="https://www.canada.ca/fr/gouvernement/fonctionpublique.html">
-      Fonction publique et force militaire
-     </a>
-    </li>
-    <li>
-     <a href="https://www.canada.ca/fr/nouvelles.html">
-      Nouvelles
-     </a>
-    </li>
-    <li>
-     <a href="https://www.canada.ca/fr/gouvernement/systeme/lois.html">
-      Traités, lois et règlements
-     </a>
-    </li>
-    <li>
-     <a href="https://www.canada.ca/fr/transparence/rapports.html">
-      Rapports à l'échelle du gouvernement
-     </a>
-    </li>
-    <li>
-     <a href="https://pm.gc.ca/fra">
-      Premier ministre
-     </a>
-    </li>
-    <li>
-     <a href="https://www.canada.ca/fr/gouvernement/systeme.html">
-      Comment le gouvernement fonctionne
-     </a>
-    </li>
-    <li>
-     <a href="https://ouvert.canada.ca/">
-      Gouvernement ouvert
-     </a>
-    </li>
-   </ul>
-  </nav>
- </div>
- <div class="brand">
-  <div class="container">
-   <div class="row">
-    <nav class="col-md-9 col-lg-10 ftr-urlt-lnk">
+</main>
+<div class="par iparys_inherited">
+</div>
+<div class="par iparys_inherited">
+ <div class="global-footer">
+  <footer id="wb-info">
+   <div class="landscape">
+    <nav class="container wb-navcurr">
      <h2 class="wb-inv">
-      À propos de ce site
+      About government
      </h2>
-     <ul>
+     <ul class="list-unstyled colcount-sm-2 colcount-md-3">
       <li>
-       <a href="https://www.canada.ca/fr/sociaux.html">
-        Médias sociaux
+       <a href="http://www.phac-aspc.gc.ca/contac-eng.php">
+        Contact us
        </a>
       </li>
       <li>
-       <a href="https://www.canada.ca/fr/mobile.html">
-        Applications mobiles
+       <a href="https://www.canada.ca/en/government/dept.html">
+        Departments and agencies
        </a>
       </li>
       <li>
-       <a href="https://www1.canada.ca/fr/nouveausite.html">
-        À propos de Canada.ca
+       <a href="https://www.canada.ca/en/government/publicservice.html">
+        Public service and
+                military
        </a>
       </li>
       <li>
-       <a href="https://www.canada.ca/fr/transparence/avis.html">
-        Avis
+       <a href="https://www.canada.ca/en/news.html">
+        News
        </a>
       </li>
       <li>
-       <a href="https://www.canada.ca/fr/transparence/confidentialite.html">
-        Confidentialité
+       <a href="https://www.canada.ca/en/government/system/laws.html">
+        Treaties, laws and
+                regulations
+       </a>
+      </li>
+      <li>
+       <a href="https://www.canada.ca/en/transparency/reporting.html">
+        Government-wide
+                reporting
+       </a>
+      </li>
+      <li>
+       <a href="http://pm.gc.ca/en">
+        Prime Minister
+       </a>
+      </li>
+      <li>
+       <a href="https://www.canada.ca/en/government/system.html">
+        About government
+       </a>
+      </li>
+      <li>
+       <a href="http://open.canada.ca/en">
+        Open government
        </a>
       </li>
      </ul>
     </nav>
-    <div class="col-xs-6 visible-sm visible-xs tofpg">
-     <a href="#wb-cont">
-      Haut de la page
-      <span class="glyphicon glyphicon-chevron-up">
-      </span>
-     </a>
-    </div>
-    <div class="col-xs-6 col-md-3 col-lg-2 text-right">
-     <img alt="Symbole du gouvernement du Canada" src="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/assets/wmms-blk.svg"/>
+   </div>
+   <div class="brand">
+    <div class="container">
+     <div class="row">
+      <nav class="col-md-10 ftr-urlt-lnk">
+       <h2 class="wb-inv">
+        About this site
+       </h2>
+       <ul>
+        <li>
+         <a href="https://www.canada.ca/en/social.html">
+          Social media
+         </a>
+        </li>
+        <li>
+         <a href="https://www.canada.ca/en/mobile.html">
+          Mobile applications
+         </a>
+        </li>
+        <li>
+         <a href="https://www.canada.ca/en/government/about.html">
+          About Canada.ca
+         </a>
+        </li>
+        <li>
+         <a href="https://www.canada.ca/en/transparency/terms.html">
+          Terms and
+                    conditions
+         </a>
+        </li>
+        <li>
+         <a href="https://www.canada.ca/en/transparency/privacy.html">
+          Privacy
+         </a>
+        </li>
+       </ul>
+      </nav>
+      <div class="col-xs-6 visible-sm visible-xs tofpg">
+       <a href="#wb-cont">
+        Top of page
+        <span class="glyphicon glyphicon-chevron-up">
+        </span>
+       </a>
+      </div>
+      <div class="col-xs-6 col-md-2 text-right">
+       <img alt="Symbol of the Government of Canada" src="https://www.canada.ca/etc/designs/canada/wet-boew/assets/wmms-blk.svg"/>
+      </div>
+     </div>
     </div>
    </div>
-  </div>
+  </footer>
  </div>
-</footer>
-<script crossorigin="anonymous" integrity="sha384-rY/jv8mMhqDabXSo+UCggqKtdmBfd3qC2/KvyTDNQ6PcUJXaxK1tMepoQda4g5vB" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js">
+</div>
+<script type="text/javascript">
+ _satellite.pageBottom();
 </script>
-<script src="https://wet-boew.github.io/themes-dist/GCWeb/wet-boew/js/wet-boew.min.js">
+<script src="https://test.canada.ca/covid-19-guidance/proto/js/alpha-banner.js">
 </script>
-<script src="https://wet-boew.github.io/themes-dist/GCWeb/GCWeb/js/theme.min.js">
+<script src="https://www.canada.ca/etc/clientlibs/granite/jquery.min.js" type="text/javascript">
 </script>
-<script src="https://test.canada.ca/covid-19-guidance/proto/js/alpha-banner-fr.js">
+<script src="https://www.canada.ca/etc/clientlibs/granite/utils.min.js" type="text/javascript">
+</script>
+<script src="https://www.canada.ca/etc/designs/canada/clientlib-publish.min.js" type="text/javascript">
+</script>
+<!--[if gte IE 9 | !IE ]><!-->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+</script>
+<script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/wet-boew.min.js">
+</script>
+<!--<![endif]-->
+<!--[if lt IE 9]>
+<script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/ie8-wet-boew2.min.js"></script>
+<![endif]-->
+<script src="https://www.canada.ca/etc/designs/canada/wet-boew/js/theme.min.js">
 </script>

@@ -3,73 +3,343 @@
   </main>
  </body>
 </html><h1>
- Title of the report &ndash; Global Talent Stream
+ Basic template
 </h1>
 <p>
- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec adipiscing tristique risus nec feugiat in.
+ This is the start of the actual content
 </p>
-<h2>
- Table of contents
+<h2 class="h3">
+ On this page
 </h2>
 <ul>
  <li>
-  <a href="#_Section_1">
-   Section 1
+  <a href="#_Basic_formatting">
+   Basic formatting
   </a>
  </li>
  <li>
-  <a href="#_Section_2">
-   Section 2
+  <a href="#_Bullet_list">
+   Bullet list
   </a>
  </li>
  <li>
-  <a href="#_Section_3">
-   Section 3
+  <a href="#_Expand-collapse">
+   Expand collapse
+  </a>
+ </li>
+ <li>
+  <a href="#_Buttons">
+   Buttons
+  </a>
+ </li>
+ <li>
+  <a href="#_Alerts">
+   Alerts
+  </a>
+ </li>
+ <li>
+  <a href="#_Tables">
+   Tables
+  </a>
+ </li>
+ <li>
+  <a href="#_Labels">
+   Labels
   </a>
  </li>
 </ul>
-<h2 id="_Section_1"> Section 1
+<h2 id="_Basic_formatting"> Basic formatting
 </h2>
 <p>
- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec adipiscing tristique risus nec feugiat in.
+ This text is in&nbsp;
+<strong>
+bold
+</strong>
+.
 </p>
 <p>
- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec adipiscing tristique risus nec feugiat in.
+ This is the&nbsp;
+ <cite>
+  cite tag
+ </cite>
+ , used for things such as referencing an act with its official name like the&nbsp;
+ <cite>
+  Employment Insurance Act
+ </cite>
+ .
 </p>
+<p>
+ This is a simple&nbsp;
+ <a href="https://test.canada.ca/service-canada/templates/template-basic-en.html">
+  hyperlink to something else</a> , and a&nbsp;
+ <a href="mailto:email@example.com">
+  email link</a> .
+</p>
+<h2 id="_Bullet_list"> Bullet list
+</h2>
 <h3>
- Section 1.1
+ Unordered list
 </h3>
-<p>
- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec adipiscing tristique risus nec feugiat in.
-</p>
-<p>
- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec adipiscing tristique risus nec feugiat in.
-</p>
-<h2 id="_Section_2"> Section 2
+<ul>
+ <li>
+  item 1
+ </li>
+ <li>
+  item 2
+ </li>
+</ul>
+<h3>
+ Ordered list
+</h3>
+<ol>
+ <li>
+  item 1
+ </li>
+ <li>
+  item 2
+ </li>
+</ol>
+<h2 id="_Expand-collapse"> Expand-collapse
 </h2>
+<h3>
+ Single expand-collapse
+</h3>
+<details>
+<summary>
+ Summary of the item
+</summary>
 <p>
- <a href="http://www.canada.ca">
-  Lorem</a> ipsum dolor sit amet, consectetus r adipiscing elit, seds do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec adipiscing' tristique risus nec feugiat in.
+ Include any code in the hidden section before you close the details tag
 </p>
-<section class="alert alert-danger">
+</details>
+<h3>
+ Multiple expand-collapses in a list
+</h3>
+<details>
+<summary>
+ Item 1
+</summary>
+<p>
+ Content for item 1.
+</p>
+<p>
+ I also want to add a:
+</p>
+<a class="btn-call-to-action">
+ Call to action
+</a>
+</details>
+<details>
+<summary>
+ Item 2
+</summary>
+<p>
+ I want a bullet list in that expand-collapse:
+</p>
+<ul>
+ <li>
+  bullet 1
+ </li>
+ <li>
+  bullet 2
+ </li>
+ <li>
+  bullet 3
+ </li>
+</ul>
+</details>
+<details>
+<summary>
+ Item 3
+</summary>
+<p>
+ For this one, I want an expand-collapse within an expand-collapse:
+</p>
+<details>
+<summary>
+ Nested collapse
+</summary>
+<section class="alert alert-warning">
  <h2>
-  Mega alert
+  Very important warning
  </h2>
  <p>
-  Don't go past this point!
+  You need to see this!
  </p>
 </section>
-<h2 id="_Section_3"> Section 3
+</details>
+</details>
+<h2 id="_Buttons"> Buttons
 </h2>
-<p>
- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed adipiscing diam donec adipiscing tristique risus nec feugiat in.
-</p>
-<button class="btn btn-call-to-action">
- Start
-</button>
-<h3>
- Section 3.1
-</h3>
-<h4>
- Section 3.1.1
-</h4>
+<a class="btn btn-call-to-action" href="http://www.canada.ca">
+  Super-task button
+ </a>
+<a class="btn btn-primary" href="http://www.canada.ca">
+  Primary button
+ </a>
+<a class="btn btn-default" href="http://www.canada.ca">
+  Secondary button
+ </a>
+<a class="btn btn-danger" href="http://www.canada.ca">
+  Danger button
+ </a>
+<h2 id="_Alerts"> Alerts
+</h2>
+<section class="alert alert-danger">
+ <h2>
+  Danger alert
+ </h2>
+ <p>
+  For dangerous situations or technical issues
+ </p>
+</section>
+<section class="alert alert-warning">
+ <h2>
+  Warning alert
+ </h2>
+ <p>
+  To warn people of consequences of actions or inactions
+ </p>
+</section>
+<section class="alert alert-info">
+ <h2>
+  Info alert
+ </h2>
+ <p>
+  To draw attention to a clarification
+ </p>
+</section>
+<section class="alert alert-success">
+ <h2>
+  Success alert
+ </h2>
+ <p>
+  To draw attention to a successful action, like confirming a submission
+ </p>
+</section>
+<h2 id="_Tables"> Tables
+</h2>
+<table class="provisional gc-table table" id="myTable1">
+ <tr>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+ </tr>
+ <tr>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+  <td>
+   <p>
+    Lorem ipsum
+   </p>
+  </td>
+ </tr>
+</table>
+<h2 id="_Labels"> Labels
+</h2>
+<span class="label label-default">
+ Default
+</span>
+<span class="label label-primary">
+ Primary
+</span>
+<span class="label label-success">
+ Success
+</span>
+<span class="label label-info">
+ Information
+</span>
+<span class="label label-warning">
+ Warning
+</span>
+<span class="label label-danger">
+ Danger
+</span>
+<h2>
+ Checkboxes
+</h2>
+<ul>
+ <li>
+  checkbox 1
+ </li>
+ <li>
+  checkbox 2
+ </li>
+ <li>
+  checkbox 3
+ </li>
+</ul>
