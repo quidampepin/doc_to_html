@@ -51,8 +51,12 @@ def html_convert():
                         p[style-name='subway-section-h1'] => nav > h1.gc-thickline
                         p[style-name='subway-nav'] => li.hidden-xs:fresh
                         p[style-name='subway-nav-active'] => li.active
-                        p[style-name='summary'] => summary"""
-                        
+                        p[style-name='summary'] => summary
+                        p[style-name='multi-page-start'] => ul.toc
+                        p[style-name='multi-page-end'] => div
+                        p[style-name='multi-page-item'] => li.multi:fresh
+                        p[style-name='multi-page-active'] => li.multiactive"""
+
     lang = request.args.get('lang', 'en')
 
     if lang == 'en':
@@ -122,7 +126,12 @@ def html_convert():
             filedata = filedata.replace('<nav>\n <h1 property="name"', '</ul>\n </nav>\n <h1 property="name"')
             filedata = filedata.replace('<li class="active">\n <a href=', '<li><a class="active" aria-current="page" href=')
             filedata = filedata.replace('</nav>\n<li class="hidden-xs">\n', '<ul>\n<li class="hidden-xs">\n')
+            filedata = filedata.replace('<ul class="toc">', '<div class="mrgn-tp-md mrgn-bttm-lg brdr-bttm">\n<div class="row">\n<ul class="toc lst-spcd">\n')
             filedata = filedata.replace('class="hidden-xs"', 'class="hidden-xs hidden-sm"')
+            filedata = filedata.replace('<li class="multi">\n <a', '<li class="col-md-4">\n<a class="list-group-item" ')
+            filedata = filedata.replace('<li class="multiactive">', '<li class="col-md-4">\n<a class="list-group-item active" ')
+            filedata = filedata.replace('\n start\n</ul>\n', '')
+            filedata = filedata.replace('\n<div>\n end\n</div>\n', '</ul>\n')
             filedata = filedata.replace('<h2>\n <a id=', '<h2 id=')
             filedata = filedata.replace('<h3>\n <a id=', '<h3 id=')
             filedata = filedata.replace('<h4>\n <a id=', '<h4 id=')
