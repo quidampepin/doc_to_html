@@ -141,53 +141,39 @@
 				"isApplication": true
 			}));
 		</script>
+    
       <script>
          var defTop = document.getElementById("def-top");
          defTop.outerHTML = wet.builder.appTop({
 
-         	"appName": [{"text": "Convert DOCX to HTML", "href": "/"}],
-         	"lngLinks": [{"lang": "fr",	"href": "#", "text": "Français"}]
+         	"appName": [{"text": "Convert DOCX to HTML", "href": "#"}],
+         	"lngLinks": [{"lang": "fr",	"href": "#", "text": "Français"}],
+          "menuLinks": [
+            {"text":"Convert DOCX", "href":"/"},
+            {"text":"Instructions", "href":"/instructions"
+          }]
          });
       </script>
       <main role="main" property="mainContentOfPage" class="container wb-prettify all-pre">
 
-        <h1>Converted DOCX</h1>
-        <script>
-           let langElem = document.getElementById("wb-lng").getElementsByTagName("a")[0];
-           let toggleURL = window.location + "";
-           if (document.documentElement.lang === 'en') {
-               toggleURL = toggleURL.replace("&lang=en", "");
-               toggleURL += "?&lang=fr";
-           } else {
-               toggleURL = toggleURL.replace("&lang=fr", "");
-               toggleURL += "?&lang=en";
-           }
-           langElem.setAttribute("href", toggleURL);
-        </script>
+         <h1>Instructions</h1>
+         <script>
+            let langElem = document.getElementById("wb-lng").getElementsByTagName("a")[0];
+            let toggleURL = window.location + "";
+            if (document.documentElement.lang === 'en') {
+                toggleURL = toggleURL.replace("&lang=en", "");
+                toggleURL += "?&lang=fr";
+            } else {
+                toggleURL = toggleURL.replace("&lang=fr", "");
+                toggleURL += "?&lang=en";
+            }
+            langElem.setAttribute("href", toggleURL);
+         </script>
 
-        <div class="container">
+         <div class="container">
 
-          <section class="well well-sm brdr-0 mrgn-bttm-0">
 
-                <h2>Code for prototype</h2>
-                          <details>
-                <summary>Code for full page</summary>
-                <button class="btn btn-default" onclick="CopyToClipboard('myCode');return false;">Copy code to clipboard</button>
-                <pre class="prettyprint">
-                  <code id="myCode">{{html_page}}
-                </code></pre></details>
+           <p>Placeholder for instructions</p>
 
-                <details>
-                <summary>Code for AEM</summary>
-                <button class="btn btn-default" onclick="CopyToClipboard('myAEMCode');return false;">Copy code to clipboard</button>
-                <pre class="prettyprint">
-                <code id="myAEMCode">{{aem_page}}
-                </code></pre></details>
-
-                </section>
-                <h2 class="wb-inv">Prototyped page</h2>
-
-                {% include 'page.html' %}
-                </div>
 
  </div>

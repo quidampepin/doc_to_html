@@ -20,6 +20,15 @@ def homepage():
     if lang == 'fr':
         return render_template("index_fr.html", lang=lang)
 
+@app.route('/instructions', methods=['GET', 'POST'])
+def instructions():
+    lang = request.args.get('lang', 'en')
+    if lang == 'en':
+        return render_template("instructions_en.html", lang=lang)
+    if lang == 'fr':
+        return render_template("instructions_fr.html", lang=lang)
+
+
 @app.route('/html_convert', methods=['GET', 'POST'])
 def html_convert():
 
