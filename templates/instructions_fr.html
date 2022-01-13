@@ -174,7 +174,68 @@
 
          <div class="container">
 
-           <p>Placeholder for instructions</p>
+           <section>
+                  <h2 class="h3">Sur cette page</h2>
+                  <ul>
+                     <li><a href="#gabarit">Utiliser le gabarit Word</a></li>
+                     <li><a href="#styles">Utiiser les styles Word</a></li>
+                     <li><a href="#sample">Exemples de documents Word</a></li>
+                  </ul>
+               </section>
+
+           <h2 id="gabarit">Utiliser le gabarit Word</h2>
+           <p>Pour en tirer le meilleur parti, utilisez ce gabarit MS Word :</p>
+           <p><a href="https://github.com/quidampepin/doc_to_html/raw/main/word_template/template.dotx">Télécharger le ganarit MS Word</a></p>
+           <p>Dans votre document Word, allez dans Fichier > Options, et sélectionnez Compléments. En bas, allez dans Gérer, sélectionnez Modèles, et cliquez sur Aller. Cliquez sur Joindre et sélectionnez le modèle que vous avez téléchargé. Cochez "Mettre à jour automatiquement les styles du document". Cliquez sur OK.</p>
+
+           <h2 id="styles">Utiliser les styles Word</h2>
+            <p>Les styles de base (titres, listes à puces, gras, italique, etc.) fonctionneront sans problème et seront transformés en éléments HTML appropriés. Certains styles personnalisés ont été ajoutés (disponibles dans les styles du ruban).</p>
+
+             <h3>Alertes</h3>
+
+            <p>Les alertes ont besoin d'un titre. Appliquez le bon style d'alerte à l'en-tête (alert-info, alert-warning, alert-danger, etc.), et appliquez "alert-text" au texte de l'alerte.</p>
+
+             <h3>Boutons</h3>
+
+            <p>Appliquez le bon style de bouton au texte (btn-cta, btn-danger, btn-primaire, etc.). Veillez à ajouter un lien hypertexte au texte du bouton.</p>
+
+             <h3>Afficher-masquer</h3>
+             <ul>
+                <li>Appliquez le style "summary" à la partie visible de l'élément afficher-masquer.</li>
+                <li>Utilisez n'importe quel style pour la partie du contenu qui est cachée</li>
+                <li>Après la partie cachée, ajoutez le mot "end" (sans majuscules, sans gras, rien), et appliquez le style "details" à ce mot. Cela indiquera au script quand fermer la balise HTML "details".</li>
+             </ul>
+             <h3>Étiquettes</h3>
+             <p>Appliquez le bon style d'étiquette au texte (label-danger, label-default, label-info, label-primary,).</p>
+
+             <h3>Navigation multi-pages</h3>
+             <ul>
+                <li>Avant les items de navigation, ajoutez le mot "start" (pas de majuscules, pas de gras, rien), et appliquez le style "multi-pate-start" à ce mot.</li>
+                <li>Appliquez le style "multi-page-active" à l'item de navigation de la page sur laquelle vous vous trouvez.</li>
+                <li>Appliquez le style "multi-page-item" à tous les autres items de navigation.</li>
+                <li>Après les éléments de navigation, ajoutez le mot "end" (pas de majuscules, pas de gras, rien), et appliquez le style "multi-page-end" à ce mot.</li>
+             </ul>
+
+             <h3>Liste numérotée</h3>
+             <p>Appliquez le style "numbered" aux éléments de la liste numérotée.</p>
+
+             <h3>Navigation de style métro</h3>
+             <ul>
+                <li>Appliquez le style "subway-group-h1" au nom du groupe de pages (en tant que tout premier élément de votre document Word).</li>
+                <li>Appliquez le style "subway-nav-active" à l'item de navigation de la page sur laquelle vous vous trouvez.</li>
+                <li>Appliquez le style "subway-nav" à tous les autres items de navigation.</li>
+                <li>appliquez le style "subway-section-h1" à la section H1 de la page sur laquelle vous vous trouvez (juste après la liste des items de navigation).</li>
+             </ul>
+
+
+             <h2 id="exemples">Exemples de documents Word</h2>
+             <p>Téléchargez ces documents Word pour voir comment certaines mises en forme sont effectuées et pour tester l'outil.</p>
+             <ul>
+                <li><a href="https://github.com/quidampepin/doc_to_html/raw/main/sample_docs/simple_formatting.docx">Mise en forme de base</a></li>
+                <li><a href="https://github.com/quidampepin/doc_to_html/raw/main/sample_docs/subway_nav.docx">Navigation de style métro</a></li>
+                <li><a href="https://github.com/quidampepin/doc_to_html/raw/main/sample_docs/ineternal_links.docx">Liens internes (ancrage automatique)</a></li>
+                <li><a href="https://github.com/quidampepin/doc_to_html/raw/main/sample_docs/multi_page_nav.docx">Navigation multi-pages</a></li>
+             </ul>
 
 
 
