@@ -190,19 +190,48 @@
             <p>Basic styles (headings, bullet lists, bold, italics, etc.) will work seamlessly and be turned into the right HTML elements. Some custom styles have been added (available in the styles in the ribbon).</p>
 
              <h3>Alerts</h3>
+
+            <p>Alerts need a heading. Apply the right alert style to the heading (alert-info, alert-warning, alert-danger, etc.), and apply "alert-text" to the text within the alert.</p>
+
              <h3>Buttons</h3>
+
+            <p>Apply the right button style to the text (btn-cta, btn-danger, btn-primary, etc.), and apply "alert-text" to the text within the alert. Make sure to add a hyperlink to the button text.</p>
+
              <h3>Expand-collapse</h3>
+             <ul>
+                <li>apply the "summary" style to the visible part of the expand collapse</li>
+                <li>use any style for the part of the content that is hidden</li>
+                <li>after the hidden part, add the word "end" (no caps, no bold, nothing), and apply the "details" style to that word. This will tell the script when to close the details HTML tag.</li>
+             </ul>
              <h3>Labels</h3>
+             <p>Apply the right label style to the text (label-danger, label-default, label-info, label-primary,).</p>
+
              <h3>Multi-page navigation</h3>
+             <ul>
+                <li>before the navigation item,  the add the word "start" (no caps, no bold, nothing), and apply the "multi-pate-start" style to that word. </li>
+                <li>apply the "multi-pate-active" style to the navigation item for the page you're on</li>
+                <li>apply the "multi-page-item" style to all other items in the navigation </li>
+                <li>after the navigation items, add the word "end" (no caps, no bold, nothing), and apply the "multi-page-end" style to that word. </li>
+             </ul>
+
              <h3>Numbered list</h3>
+             <p>Apply the "numbered" style to the items in the numbered list.</p>
+
              <h3>Subway navigation</h3>
+             <ul>
+                <li>apply the "subway-group-h1" to the page group name (as the very first thing in your Word document)</li>
+                <li>apply the "subway-nav-active" style to the navigation item for the page you're on</li>
+                <li>apply the "subway-nav" style to all other items in the navigation</li>
+                <li>apply the "subway-section-h1" style to the H1 of the page you're on (right after the list of subway items)</li>
+             </ul>
+
 
              <h2 id="sample">Sample Word documents</h2>
              <p>Download these word docs to see how some formatting is done and to test the tool.</p>
              <ul>
-                <li><a href="">Basic formatting</a></li>
-                <li><a href="#">Subway navigation</a></li>
-                <li><a href="">Internal links (automatic anchoring)</a></li>
-                <li><a href="">Multi-page navigation</a></li>
+                <li><a href="https://github.com/quidampepin/doc_to_html/raw/main/sample_docs/simple_formatting.docx">Basic formatting</a></li>
+                <li><a href="https://github.com/quidampepin/doc_to_html/raw/main/sample_docs/subway_nav.docx">Subway navigation</a></li>
+                <li><a href="https://github.com/quidampepin/doc_to_html/raw/main/sample_docs/ineternal_links.docx">Internal links (automatic anchoring)</a></li>
+                <li><a href="https://github.com/quidampepin/doc_to_html/raw/main/sample_docs/multi_page_nav.docx">Multi-page navigation</a></li>
              </ul>
  </div>
