@@ -149,6 +149,17 @@
          	"lngLinks": [{"lang": "fr",	"href": "#", "text": "Français"}]
          });
       </script>
+      <script>
+        function CopyToClipboard(id)
+        {
+        var r = document.createRange();
+        r.selectNode(document.getElementById(id));
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(r);
+        document.execCommand('copy');
+        window.getSelection().removeAllRanges();
+        }
+        </script>
       <main role="main" property="mainContentOfPage" class="container wb-prettify all-pre">
 
         <h1>Converted DOCX</h1>
