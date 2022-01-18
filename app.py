@@ -121,7 +121,6 @@ def html_convert():
     with open("templates/page.html", "r") as file:
         filedata = file.read()
         filedata = filedata.replace('</main></body></html><h1>', '<h1>')
-        filedata = filedata.replace('</main></body></html><nav class="provisional gc-subway"><h1 id="gc-document-nav">', '<nav class="provisional gc-subway"><h1 id="gc-document-nav">')
         filedata = filedata.replace('<h3>On this page</h3>', '<h2 class="h3">On this page</h2>')
         filedata = filedata.replace('<summary>', '<details><summary>')
         filedata = filedata.replace('<details>end</details>', '</details>')
@@ -145,6 +144,7 @@ def html_convert():
         filedata = filedata.replace('class="gc-subway', 'class="provisional gc-subway')
         filedata = filedata.replace('<h1 class="gc-thickline">', '<h1 property="name" id="wb-cont" class="gc-thickline">')
         filedata = filedata.replace('<nav class="provisional gc-subway"><h1>', '<nav class="provisional gc-subway"><h1 id="gc-document-nav">')
+        filedata = filedata.replace('</main></body></html><nav class="provisional gc-subway">', ' <nav class="provisional gc-subway">')
         filedata = filedata.replace('<nav><h1 property="name"', '</ul></nav><h1 property="name"')
         filedata = filedata.replace('<li class="active"><a href=', '<li><a class="active" aria-current="page" href=')
         filedata = filedata.replace('</nav><li class="hidden-xs">', '<ul><li class="hidden-xs">')
