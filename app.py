@@ -81,6 +81,8 @@ def html_convert():
     with open("transitory/doc.html") as fp:
         soup = BeautifulSoup(fp, 'html.parser')
 
+
+
         if lang == 'en':
 
             #parse the stable beginning of a Canada.ca page (header, menu)
@@ -92,13 +94,9 @@ def html_convert():
             with open("templates/end_en.html") as fp:
                 soup2 = BeautifulSoup(fp, 'html.parser')
 
-            #prettify the html from word doc
-            with open("transitory/doc_output.html", "w") as file:
-                file.write(str((soup.prettify())))
-
             #combine the header, main and footer sections into a prettified html page
             with open("templates/page.html", "w") as file:
-                file.write(str((soup1.prettify())+(soup.prettify())+(soup2.prettify())))
+                file.write(str(soup1)+str(soup)+str(soup2))
 
 
 
@@ -113,42 +111,31 @@ def html_convert():
             with open("templates/end_fr.html") as fp:
                 soup2 = BeautifulSoup(fp, 'html.parser')
 
-            #prettify the html from word doc
-            with open("transitory/doc_output.html", "w") as file:
-                file.write(str((soup.prettify())))
-
             #combine the header, main and footer sections into a prettified html page
             with open("templates/page.html", "w") as file:
-                file.write(str((soup1.prettify())+(soup.prettify())+(soup2.prettify())))
+                file.write(str(soup1)+str(soup)+str(soup2))
 
 
 #clean up the generated html page into filedata
 
     with open("templates/page.html", "r") as file:
         filedata = file.read()
-        filedata = filedata.replace('</meta>\n </head>\n', '</head>\n')
-        filedata = filedata.replace('<nav>\n   <ul id="wb-tphp">\n    <div class="par iparys_inherited">\n     <div class="global-header">\n', '<div class="par iparys_inherited">\n     <div class="global-header">\n')
-        filedata = filedata.replace('</main>\n </body>\n</html><h1>', '<h1>')
-        filedata = filedata.replace('</main>\n </body>\n</html><nav class="provisional gc-subway">\n <h1>', '<nav class="provisional gc-subway">\n <h1>')
-        filedata = filedata.replace('</script>\n  </link>\n </head>\n', '</script>\n </head>\n')
-        filedata = filedata.replace('<link href="https://www.canada.ca/etc/designs/canada/wet-boew/assets/wmms-blk.svg" property="logo"/>\n           </meta>\n          </meta>\n', '<link href="https://www.canada.ca/etc/designs/canada/wet-boew/assets/wmms-blk.svg" property="logo"/>\n')
-        filedata = filedata.replace('<div class="par iparys_inherited">\n</div>\n<div class="par iparys_inherited">\n', '</main>\n<div class="par iparys_inherited">\n</div>\n<div class="par iparys_inherited">\n')
-        filedata = filedata.replace('</a> ,', '</a>,')
-        filedata = filedata.replace('<h3>\n On this page\n</h3>', '<h2 class="h3">\n On this page\n</h2>')
-        filedata = filedata.replace('<summary>\n', '<details>\n<summary>\n')
-        filedata = filedata.replace('<details>\n end\n</details>\n', '</details>\n')
+        filedata = filedata.replace('</main></body></html><h1>', '<h1>')
+        filedata = filedata.replace('</main></body></html><nav class="provisional gc-subway"><h1 id="gc-document-nav">', '<nav class="provisional gc-subway"><h1 id="gc-document-nav">')
+        filedata = filedata.replace('<h3>On this page</h3>', '<h2 class="h3">On this page</h2>')
+        filedata = filedata.replace('<summary>', '<details><summary>')
+        filedata = filedata.replace('<details>end</details>', '</details>')
         filedata = filedata.replace('class="alert-danger', 'class="alert alert-danger')
         filedata = filedata.replace('class="alert-warning', 'class="alert alert-warning')
         filedata = filedata.replace('class="alert-info', 'class="alert alert-info')
         filedata = filedata.replace('class="alert-success', 'class="alert alert-success')
-        filedata = filedata.replace('</section>\n<alert>\n', '')
+        filedata = filedata.replace('</section><alert>', '')
         filedata = filedata.replace('</alert>', '</section>')
         filedata = filedata.replace('<table>', '<table class="provisional gc-table table" id="myTable1">')
-        filedata = filedata.replace('<a class="btn-call-to-action">\n <a ', '<a class="btn btn-call-to-action" ')
-        filedata = filedata.replace('<a class="btn-primary">\n <a ', '<a class="btn btn-primary" ')
-        filedata = filedata.replace('<a class="btn-default">\n <a ', '<a class="btn btn-default" ')
-        filedata = filedata.replace('<a class="btn-danger">\n <a ', '<a class="btn btn-danger" ')
-        filedata = filedata.replace('\n </a>\n</a>\n', '\n </a>\n')
+        filedata = filedata.replace('<a class="btn-call-to-action"><a ', '<a class="btn btn-call-to-action" ')
+        filedata = filedata.replace('<a class="btn-primary"><a ', '<a class="btn btn-primary" ')
+        filedata = filedata.replace('<a class="btn-default"><a ', '<a class="btn btn-default" ')
+        filedata = filedata.replace('<a class="btn-danger"><a ', '<a class="btn btn-danger" ')
         filedata = filedata.replace('class="label-default', 'class="label label-default')
         filedata = filedata.replace('class="label-primary', 'class="label label-primary')
         filedata = filedata.replace('class="label-success', 'class="label label-success')
@@ -157,22 +144,20 @@ def html_convert():
         filedata = filedata.replace('class="label-danger', 'class="label label-danger')
         filedata = filedata.replace('class="gc-subway', 'class="provisional gc-subway')
         filedata = filedata.replace('<h1 class="gc-thickline">', '<h1 property="name" id="wb-cont" class="gc-thickline">')
-        filedata = filedata.replace('</main>\n   </ul>\n  </nav>\n </body>\n</html><nav class="provisional gc-subway">\n <h1>\n', '<nav class="provisional gc-subway">\n <h1 id="gc-document-nav">\n')
-        filedata = filedata.replace('<nav>\n <h1 property="name"', '</ul>\n </nav>\n <h1 property="name"')
-        filedata = filedata.replace('<li class="active">\n <a href=', '<li><a class="active" aria-current="page" href=')
-        filedata = filedata.replace('</nav>\n<li class="hidden-xs">\n', '<ul>\n<li class="hidden-xs">\n')
-        filedata = filedata.replace('<ul class="toc">', '<div class="mrgn-tp-md mrgn-bttm-lg brdr-bttm">\n<div class="row">\n<ul class="toc lst-spcd">\n')
+        filedata = filedata.replace('<nav class="provisional gc-subway"><h1>', '<nav class="provisional gc-subway"><h1 id="gc-document-nav">')
+        filedata = filedata.replace('<nav><h1 property="name"', '</ul></nav><h1 property="name"')
+        filedata = filedata.replace('<li class="active"><a href=', '<li><a class="active" aria-current="page" href=')
+        filedata = filedata.replace('</nav><li class="hidden-xs">', '<ul><li class="hidden-xs">')
+        filedata = filedata.replace('<ul class="toc">', '<div class="mrgn-tp-md mrgn-bttm-lg brdr-bttm"><div class="row"><ul class="toc lst-spcd">')
         filedata = filedata.replace('class="hidden-xs"', 'class="hidden-xs hidden-sm"')
-        filedata = filedata.replace('<li class="multi">\n <a', '<li class="col-md-4">\n<a class="list-group-item" ')
-        filedata = filedata.replace('<li class="multiactive">', '<li class="col-md-4">\n<a class="list-group-item active" ')
-        filedata = filedata.replace('\n start\n</ul>\n', '')
-        filedata = filedata.replace('\n<div>\n end\n</div>\n', '</ul>\n')
-        filedata = filedata.replace('<h2>\n <a id=', '<h2 id=')
-        filedata = filedata.replace('<h3>\n <a id=', '<h3 id=')
-        filedata = filedata.replace('<h4>\n <a id=', '<h4 id=')
+        filedata = filedata.replace('<li class="multi"><a', '<li class="col-md-4"><a class="list-group-item" ')
+        filedata = filedata.replace('<li class="multiactive">', '<li class="col-md-4"><a class="list-group-item active" ')
+        filedata = filedata.replace('start</ul>', '')
+        filedata = filedata.replace('<div>end</div>', '</ul>')
+        filedata = filedata.replace('<h2><a id=', '<h2 id=')
+        filedata = filedata.replace('<h3><a id=', '<h3 id=')
+        filedata = filedata.replace('<h4><a id=', '<h4 id=')
         filedata = filedata.replace('"></a', '">')
-        filedata = filedata.replace('\n <strong>\n  ', '\n<strong>\n')
-        filedata = filedata.replace('\n </strong>\n ', '\n</strong>\n')
         filedata = filedata.replace('\\xa0', '&nbsp;')
         filedata = filedata.replace('\\u2019', '&rsquo;')
         filedata = filedata.replace('\\u202f', '&nbsp;')
@@ -221,8 +206,8 @@ def html_convert():
              pageaem_soup= BeautifulSoup(fp, 'html.parser')
 
 
-        html_page = page_soup.prettify()
-        aem_page = pageaem_soup.prettify()
+        html_page = page_soup
+        aem_page = pageaem_soup
 
 
     if lang == 'en':
