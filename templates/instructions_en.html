@@ -172,66 +172,95 @@
 
          <div class="container">
 
-           <section>
-                  <h2 class="h3">On this page</h2>
-                  <ul>
-                     <li><a href="#template">Use the Word template</a></li>
-                     <li><a href="#styles">Use Word styles</a></li>
-                     <li><a href="#sample">Sample Word documents</a></li>
-                  </ul>
-               </section>
-
-           <h2 id="template">Use the Word template</h2>
-           <p>To get the most out of this, use this MS Word template:</p>
-           <p><a href="https://github.com/quidampepin/doc_to_html/raw/main/word_template/template.dotx">Download MS Word template</a></p>
-           <p>In your Word doc, go to File > Options, and select Add-ins. At the bottom, go to Manage, select Templates, and click Go. Click on Attach and select the template your downloaded. Tick "Automatically update document styles". Click OK.</p>
-
-           <h2 id="styles">Use Word styles</h2>
-            <p>Basic styles (headings, bullet lists, bold, italics, etc.) will work seamlessly and be turned into the right HTML elements. Some custom styles have been added (available in the styles in the ribbon).</p>
-
-             <h3>Alerts</h3>
-
-            <p>Alerts need a heading. Apply the right alert style to the heading (alert-info, alert-warning, alert-danger, etc.), and apply "alert-text" to the text within the alert.</p>
-
-             <h3>Buttons</h3>
-
-            <p>Apply the right button style to the text (btn-cta, btn-danger, btn-primary, etc.). Make sure to add a hyperlink to the button text.</p>
-
-             <h3>Expand-collapse</h3>
-             <ul>
-                <li>apply the "summary" style to the visible part of the expand collapse</li>
-                <li>use any style for the part of the content that is hidden</li>
-                <li>after the hidden part, add the word "end" (no caps, no bold, nothing), and apply the "details" style to that word. This will tell the script when to close the details HTML tag.</li>
-             </ul>
-             <h3>Labels</h3>
-             <p>Apply the right label style to the text (label-danger, label-default, label-info, label-primary,).</p>
-
-             <h3>Multi-page navigation</h3>
-             <ul>
-                <li>before the navigation item,  the add the word "start" (no caps, no bold, nothing), and apply the "multi-pate-start" style to that word. </li>
-                <li>apply the "multi-page-active" style to the navigation item for the page you're on</li>
-                <li>apply the "multi-page-item" style to all other items in the navigation </li>
-                <li>after the navigation items, add the word "end" (no caps, no bold, nothing), and apply the "multi-page-end" style to that word. </li>
-             </ul>
-
-             <h3>Numbered list</h3>
-             <p>Apply the "numbered" style to the items in the numbered list.</p>
-
-             <h3>Subway navigation</h3>
-             <ul>
-                <li>apply the "subway-group-h1" to the page group name (as the very first thing in your Word document)</li>
-                <li>apply the "subway-nav-active" style to the navigation item for the page you're on</li>
-                <li>apply the "subway-nav" style to all other items in the navigation</li>
-                <li>apply the "subway-section-h1" style to the H1 of the page you're on (right after the list of subway items)</li>
-             </ul>
-
-
-             <h2 id="sample">Sample Word documents</h2>
-             <p>Download these word docs to see how some formatting is done and to test the tool.</p>
-             <ul>
-                <li><a href="https://github.com/quidampepin/doc_to_html/raw/main/sample_docs/simple_formatting.docx">Basic formatting</a></li>
-                <li><a href="https://github.com/quidampepin/doc_to_html/raw/main/sample_docs/subway_nav.docx">Subway navigation</a></li>
-                <li><a href="https://github.com/quidampepin/doc_to_html/raw/main/sample_docs/ineternal_links.docx">Internal links (automatic anchoring)</a></li>
-                <li><a href="https://github.com/quidampepin/doc_to_html/raw/main/sample_docs/multi_page_nav.docx">Multi-page navigation</a></li>
-             </ul>
+           <h2 class="h3">On this page</h2>
+   <ul>
+      <li><a href="#_Use_the_Word">Use the Word template</a></li>
+      <li><a href="#_Use_Word_styles">Use Word styles</a></li>
+      <li><a href="#_Sample_Word_documents">Sample Word documents</a></li>
+      <li><a href="#_Use_code_in">Use code in prototypes</a></li>
+   </ul>
+   <h2 id="_Use_the_Word">Use the Word template</h2>
+   <p>To get the most out of this, use this MS Word template:</p>
+   <p><a href="https://github.com/quidampepin/doc_to_html/raw/main/word_template/template.dotx">Download MS Word template</a></p>
+   <p>In your Word doc, go to File &gt; Options, and select Add-ins. At the bottom, go to Manage, select Templates, and click Go. Click on Attach and select the template your downloaded. Tick "Automatically update document styles". Click OK.</p>
+   <h2 id="_Use_Word_styles">Use Word styles</h2>
+   <p>Basic styles (headings, bullet lists, bold, italics, etc.) will work seamlessly and be turned into the right HTML elements. Some custom styles have been added (available in the styles in the ribbon).</p>
+   <details>
+      <summary>Alerts</summary>
+      <p>Alerts need a heading. Apply the right alert style to the heading (alert-info, alert-warning, alert-danger, etc.), and apply "alert-text" to the text within the alert.</p>
+   </details>
+   <details>
+      <summary>Buttons</summary>
+      <p>Apply the right button style to the text (btn-cta, btn-danger, btn-primary, etc.). Make sure to add a hyperlink to the button text.</p>
+   </details>
+   <details>
+      <summary>Expand-collapse</summary>
+      <ul>
+         <li>apply the "summary" style to the visible part of the expand collapse</li>
+         <li>use any style for the part of the content that is hidden</li>
+         <li>after the hidden part, add the word "end" (no caps, no bold, nothing), and apply the "details" style to that word. This will tell the script when to close the details HTML tag.</li>
+      </ul>
+   </details>
+   <details>
+      <summary>Internal links</summary>
+      <p>The script can handle internal links and create anchors automatically.</p>
+      <ul>
+         <li>In Word, highlight the text you want to add an hyperlink to</li>
+         <li>Insert a hyperlink</li>
+         <li>Choose “Places in the document”</li>
+         <li>Select the heading you want the link to go to</li>
+      </ul>
+   </details>
+   <details>
+      <summary>Labels</summary>
+      <p>Apply the right label style to the text (label-danger, label-default, label-info, label-primary, etc).</p>
+   </details>
+   <details>
+      <summary>Multi-page navigation</summary>
+      <ul>
+         <li>before the navigation item, the add the word "start" (no caps, no bold, nothing), and apply the "multi-pate-start" style to that word.</li>
+         <li>apply the "multi-page-active" style to the navigation item for the page you're on</li>
+         <li>apply the "multi-page-item" style to all other items in the navigation</li>
+         <li>after the navigation items, add the word "end" (no caps, no bold, nothing), and apply the "multi-page-end" style to that word.</li>
+      </ul>
+   </details>
+   <details>
+      <summary>Numbered list</summary>
+      <p>Apply the "numbered" style to the items in the numbered list.</p>
+   </details>
+   <details>
+      <summary>Subway navigation</summary>
+      <ul>
+         <li>apply the "subway-group-h1" to the page group name (as the very first thing in your Word document)</li>
+         <li>apply the "subway-nav-active" style to the navigation item for the page you're on</li>
+         <li>apply the "subway-nav" style to all other items in the navigation</li>
+         <li>apply the "subway-section-h1" style to the H1 of the page you're on (right after the list of subway items)</li>
+      </ul>
+   </details>
+   <h2 id="_Sample_Word_documents">Sample Word documents</h2>
+   <p>Download these word docs to see how some formatting is done and to test the tool.</p>
+   <ul>
+      <li><a href="https://github.com/quidampepin/doc_to_html/raw/main/sample_docs/simple_formatting.docx">Basic formatting</a></li>
+      <li><a href="https://github.com/quidampepin/doc_to_html/raw/main/sample_docs/subway_nav.docx">Subway navigation</a></li>
+      <li><a href="https://github.com/quidampepin/doc_to_html/raw/main/sample_docs/ineternal_links.docx">Internal links (automatic anchoring)</a></li>
+      <li><a href="https://github.com/quidampepin/doc_to_html/raw/main/sample_docs/multi_page_nav.docx">Multi-page navigation</a></li>
+   </ul>
+   <h2 id="_Use_code_in">Use code in prototypes</h2>
+   <p>The script generates 2 code snippets: the code for the full page (that you copy in GitHub, for example), and the code for the main section (that you can copy in AEM, for example). </p>
+   <h3>Code for full page</h3>
+   <ul>
+      <li>Open the “Code for full page” expand-collapse</li>
+      <li>Click on “Copy to clipboard”</li>
+      <li>If you want the code to be formatted properly, go to an HTML formatter (for example, <a href="https://www.freeformatter.com/html-formatter.html">https://www.freeformatter.com/html-formatter.html</a>), paste the code</li>
+      <li>Paste the code where you need it (for example, in a GitHub repo for your organization)</li>
+   </ul>
+   <h3>Code for AEM</h3>
+   <ul>
+      <li>Open the “Code for AEM” expand-collapse</li>
+      <li>Click on “Copy to clipboard”</li>
+      <li>If you want the code to be formatted properly, go to an HTML formatter (for example, <a href="https://www.freeformatter.com/html-formatter.html">https://www.freeformatter.com/html-formatter.html</a>), paste the code</li>
+      <li>In AEM, use an HTML component</li>
+      <li>Paste the code</li>
+      <li>You may need to remove the “main” tag and the “h1” tag (and the closing “main” tag), unless you’re deleting the H1 that comes automatically in AEM</li>
+   </ul>
  </div>

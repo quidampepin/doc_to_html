@@ -122,6 +122,7 @@ def html_convert():
         filedata = file.read()
         filedata = filedata.replace('</main></body></html><h1>', '<h1>')
         filedata = filedata.replace('<h3>On this page</h3>', '<h2 class="h3">On this page</h2>')
+        filedata = filedata.replace('<h3>Sur cette page</h3>', '<h2 class="h3">Sur cette page</h2>')
         filedata = filedata.replace('<summary>', '<details><summary>')
         filedata = filedata.replace('<details>end</details>', '</details>')
         filedata = filedata.replace('class="alert-danger', 'class="alert alert-danger')
