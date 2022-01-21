@@ -64,6 +64,23 @@ def html_convert():
                         p[style-name='multi-page-start'] => ul.toc
                         p[style-name='multi-page-end'] => div
                         p[style-name='multi-page-item'] => li.multi:fresh
+                        p[style-name='next'] => nav.next
+                        p[style-name='previous'] => nav.previous
+                        p[style-name='H1-ILP'] => div.provisional > h1
+                        p[style-name='image-ILP'] => img.ilp
+                        p[style-name='most_requested'] => section.most_requested > h2
+                        p[style-name='mr_link'] => li.most_requested:fresh
+                        p[style-name='doormat'] => div.col-md-4 > h3:fresh
+                        p[style-name='ilp-feature'] => section.gc-feature > h2
+                        p[style-name='end-doormats'] => div.row > div.col
+                        p[style-name='ilp-feature-link'] => h3.h5
+                        p[style-name='ilp-social-media-h2'] => section.follow-us > h2
+                        p[style-name='ilp-facebook'] => li.facebook:fresh
+                        p[style-name='ilp-twitter'] => li.twitter:fresh
+                        p[style-name='ilp-youtube'] => li.youtube:fresh
+                        p[style-name='ilp-insta'] => li.instagram:fresh
+                        p[style-name='ilp-linkedin'] => li.linkedin:fresh
+                        p[style-name='ilp-contributors'] => section.gc-contributors > h2
                         p[style-name='multi-page-active'] => li.multiactive"""
 
     lang = request.args.get('lang', 'en')
@@ -147,6 +164,7 @@ def html_convert():
         filedata = filedata.replace('<nav class="provisional gc-subway"><h1>', '<nav class="provisional gc-subway"><h1 id="gc-document-nav">')
         filedata = filedata.replace('</main></body></html><nav class="provisional gc-subway">', ' <nav class="provisional gc-subway">')
         filedata = filedata.replace('<nav><h1 property="name"', '</ul></nav><h1 property="name"')
+        filedata = filedata.replace('</nav><li class="active">', '<ul><li class="active">')
         filedata = filedata.replace('<li class="active"><a href=', '<li><a class="active" aria-current="page" href=')
         filedata = filedata.replace('</nav><li class="hidden-xs">', '<ul><li class="hidden-xs">')
         filedata = filedata.replace('<ul class="toc">', '<div class="mrgn-tp-md mrgn-bttm-lg brdr-bttm"><div class="row"><ul class="toc lst-spcd">')
@@ -155,6 +173,29 @@ def html_convert():
         filedata = filedata.replace('<li class="multiactive">', '<li class="col-md-4"><a class="list-group-item active" ')
         filedata = filedata.replace('start</ul>', '')
         filedata = filedata.replace('<div>end</div>', '</ul>')
+        filedata = filedata.replace('<nav class="next">', '<nav class="mrgn-bttm-lg mrgn-tp-lg"><h3 class="wb-inv">Document navigation</h3><ul class="pager"><li class="next">')
+        filedata = filedata.replace('<nav class="previous">', '<nav class="mrgn-bttm-lg mrgn-tp-lg"><h3 class="wb-inv">Document navigation</h3><ul class="pager"><li class="previous">')
+        filedata = filedata.replace('</a></nav>">', '</li></ul></nav>')
+        filedata = filedata.replace('<main property="mainContentOfPage" resource="#wb-main" typeof="WebPageElement">\n</main></body></html><div class="provisional"><h1>', '<main property="mainContentOfPage" resource="#wb-main" typeof="WebPageElement"><div class="container"><div class="row"><div class="col-md-6"><h1 property="name" id="wb-cont">')
+        filedata = filedata.replace('<img class="ilp"/>', '</div><div class="col-md-6 mrgn-tp-sm hidden-sm hidden-xs provisional gc-topic-bg"><div data-bgimg>')
+        filedata = filedata.replace('</h1></div>', '</h1>')
+        filedata = filedata.replace('<section class="most_requested">', '</div></div></div></div><section class="well well-sm provisional gc-most-requested"><div class="container"><div class="row"><div class="col-md-2">')
+        filedata = filedata.replace('</h2></section><li class="most_requested">', '</h2></div><div class="col-md-10"><ul class="colcount-md-2"><li>')
+        filedata = filedata.replace('<li class="most_requested">', '<li>')
+        filedata = filedata.replace('<p><strong>Services and information</strong></p>', '</ul></div></div></div></section><div class="container"><section class="gc-srvinfo"><h2 class="wb-inv">Services and information</h2><div class="row wb-eqht-grd">')
+        filedata = filedata.replace('</h3></div><p>', '</h3><p>')
+        filedata = filedata.replace('</p><div class="col-md-4">', '</p></div><div class="col-md-4">')
+        filedata = filedata.replace('<div class="row"><div class="col">(end of doormats)</div></div>', '</div></div></section>')
+        filedata = filedata.replace('<section class="gc-feature"><h2>Features</h2></section><p><img', '<div class="row mrgn-tp-xl"><div class="col-md-8"><section class="gc-feature"><h2 class="wb-inv">Features</h2><div class="row"><div class="col-md-6"><img')
+        filedata = filedata.replace('<h3 class="h5"><a', '</div><div class="col-md-6"><h3 class="h5"><a class="stretched-link"')
+        filedata = filedata.replace('<section class="follow-us"><h2>On social media</h2></section>', '</div></div></section></div><div class="col-md-4"><section class="provisional gc-followus"><h2>On social media</h2><ul>')
+        filedata = filedata.replace('<li class="facebook"><a', '<li><a class="facebook wb-lbx "')
+        filedata = filedata.replace('<li class="twitter"><a', '<li><a class="twitter "')
+        filedata = filedata.replace('<li class="youtube"><a', '<li><a class="youtube "')
+        filedata = filedata.replace('<li class="instagram"><a', '<li><a class="instagram "')
+        filedata = filedata.replace('<li class="linkedin"><a', '<li><a class="linkedin "')
+        filedata = filedata.replace('<section class="gc-contributors"><h2>From:</h2></section>', '<section class="provisional gc-contributors"><h2>From:</h2>')
+        filedata = filedata.replace('</li><section class="provisional gc-contributors">', '</ul></section></div></div><section class="provisional gc-contributors">')
         filedata = filedata.replace('<h2><a id=', '<h2 id=')
         filedata = filedata.replace('<h3><a id=', '<h3 id=')
         filedata = filedata.replace('<h4><a id=', '<h4 id=')
