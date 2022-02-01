@@ -176,7 +176,7 @@ def html_convert():
         filedata = filedata.replace('<nav class="next">', '<nav class="mrgn-bttm-lg mrgn-tp-lg"><h3 class="wb-inv">Document navigation</h3><ul class="pager"><li class="next">')
         filedata = filedata.replace('<nav class="previous">', '<nav class="mrgn-bttm-lg mrgn-tp-lg"><h3 class="wb-inv">Document navigation</h3><ul class="pager"><li class="previous">')
         filedata = filedata.replace('</a></nav>">', '</li></ul></nav>')
-        filedata = filedata.replace('<main property="mainContentOfPage" resource="#wb-main" typeof="WebPageElement">\n</main></body></html><div class="provisional"><h1>', '<main property="mainContentOfPage" resource="#wb-main" typeof="WebPageElement"><div class="container"><div class="row"><div class="col-md-6"><h1 property="name" id="wb-cont">')
+        filedata = filedata.replace('<main class="container" property="mainContentOfPage" resource="#wb-main" typeof="WebPageElement">\n</main></body></html><div class="provisional"><h1>', '<main property="mainContentOfPage" resource="#wb-main" typeof="WebPageElement"><div class="container"><div class="row"><div class="col-md-6"><h1 property="name" id="wb-cont">')
         filedata = filedata.replace('<img class="ilp"/>', '</div><div class="col-md-6 mrgn-tp-sm hidden-sm hidden-xs provisional gc-topic-bg"><div data-bgimg>')
         filedata = filedata.replace('</h1></div>', '</h1>')
         filedata = filedata.replace('<section class="most_requested">', '</div></div></div></div><section class="well well-sm provisional gc-most-requested"><div class="container"><div class="row"><div class="col-md-2">')
