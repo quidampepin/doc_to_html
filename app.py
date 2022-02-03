@@ -112,7 +112,7 @@ def html_convert():
                 soup2 = BeautifulSoup(fp, 'html.parser')
 
             #combine the header, main and footer sections into a prettified html page
-            with open("templates/page.html", "w") as file:
+            with open("tmp/page.html", "w") as file:
                 file.write(str(soup1)+str(soup)+str(soup2))
 
 
@@ -129,13 +129,13 @@ def html_convert():
                 soup2 = BeautifulSoup(fp, 'html.parser')
 
             #combine the header, main and footer sections into a prettified html page
-            with open("templates/page.html", "w") as file:
+            with open("tmp/page.html", "w") as file:
                 file.write(str(soup1)+str(soup)+str(soup2))
 
 
 #clean up the generated html page into filedata
 
-    with open("templates/page.html", "r") as file:
+    with open("tmp/page.html", "r") as file:
         filedata = file.read()
         filedata = filedata.replace('</main></body></html><h1>', '<h1>')
         filedata = filedata.replace('<h3>On this page</h3>', '<h2 class="h3">On this page</h2>')
@@ -235,22 +235,22 @@ def html_convert():
         filedata3 = filedata3[0]
 
         #write the cleaned up filedata to the html page
-        with open('templates/page.html', 'w') as file:
+        with open('tmp/page.html', 'w') as file:
           file.write(filedata)
 
-        with open('templates/page_aem.html', 'w') as file:
+        with open('tmp/page_aem.html', 'w') as file:
           file.write(filedata3)
 
-        with open("templates/page.html") as fp:
+        with open("tmp/page.html") as fp:
              page_soup= BeautifulSoup(fp, 'html.parser')
 
-        with open("templates/page_aem.html") as fp:
+        with open("tmp/page_aem.html") as fp:
              pageaem_soup= BeautifulSoup(fp, 'html.parser')
 
 
         html_page = page_soup
         aem_page = pageaem_soup
-
+    
 
     if lang == 'en':
 
