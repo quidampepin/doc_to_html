@@ -7,7 +7,7 @@ import mammoth
 from bs4 import BeautifulSoup
 from werkzeug.utils import secure_filename
 
-UPLOAD_FOLDER = 'upload/'
+UPLOAD_FOLDER = 'tmp/'
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
@@ -90,12 +90,12 @@ def html_convert():
     with file as docx_file:
         result = mammoth.convert_to_html(docx_file, style_map = custom_styles)
         text = result.value
-        with open('transitory/doc.html', 'w', encoding= 'unicode_escape') as html_file:
+        with open('tmp/doc.html', 'w', encoding= 'unicode_escape') as html_file:
             html_file.write(text)
 
 
     #parse the html created from the word doc
-    with open("transitory/doc.html") as fp:
+    with open("tmp/doc.html") as fp:
         soup = BeautifulSoup(fp, 'html.parser')
 
 
