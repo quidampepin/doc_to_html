@@ -250,15 +250,14 @@ def html_convert():
 
         html_page = page_soup
         aem_page = pageaem_soup
-        full_page = str(filedata)
 
     if lang == 'en':
 
-        return render_template("code_en.html", lang=lang, html_page=html_page, aem_page=aem_page, full_page = full_page)
+        return render_template("code_en.html", lang=lang, html_page=html_page, aem_page=aem_page)
 
     if lang == 'fr':
 
-        return render_template("code_fr.html", lang=lang, html_page=html_page, aem_page=aem_page, full_page = full_page)
+        return render_template("code_fr.html", lang=lang, html_page=html_page, aem_page=aem_page)
 
 
 if __name__ == '__main__':
