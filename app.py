@@ -93,7 +93,8 @@ def html_convert():
         with open('tmp/doc.html', 'w', encoding= 'unicode_escape') as html_file:
             html_file.write(text)
 
-
+    file.close()
+    
     #parse the html created from the word doc
     with open("tmp/doc.html") as fp:
         soup = BeautifulSoup(fp, 'html.parser')
