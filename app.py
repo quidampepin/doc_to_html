@@ -12,7 +12,7 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET'])
 def homepage():
     lang = request.args.get('lang', 'en')
     if lang == 'en':
@@ -20,7 +20,7 @@ def homepage():
     if lang == 'fr':
         return render_template("index_fr.html", lang=lang)
 
-@app.route('/instructions', methods=['GET', 'POST'])
+@app.route('/instructions', methods=['GET'])
 def instructions():
     lang = request.args.get('lang', 'en')
     if lang == 'en':
