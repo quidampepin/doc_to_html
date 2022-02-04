@@ -36,65 +36,63 @@ def html_convert():
         f = request.files['file']
         filename = secure_filename(f.filename)
         f.save(app.config['UPLOAD_FOLDER'] + filename)
-        file = open(app.config['UPLOAD_FOLDER'] + filename,"rb")
+        with open(app.config['UPLOAD_FOLDER'] + filename,"rb") as docx_file:
+            custom_styles = """ i => cite
+                                p[style-name='ordered'] => ol
+                                p[style-name='details'] => details:fresh
+                                p[style-name='btn-cta'] => a.btn-call-to-action
+                                p[style-name='btn-primary'] => a.btn-primary
+                                p[style-name='btn-secondary'] => a.btn-default
+                                p[style-name='btn-danger'] => a.btn-danger
+                                p[style-name='alert-danger'] => section.alert-danger > h2
+                                p[style-name='alert-warning'] => section.alert-warning > h2
+                                p[style-name='alert-info'] => section.alert-info > h2
+                                p[style-name='alert-success'] => section.alert-success > h2
+                                p[style-name='label-default'] => span.label-default
+                                p[style-name='label-primary'] => span.label-primary
+                                p[style-name='label-success'] => span.label-success
+                                p[style-name='label-info'] => span.label-info
+                                p[style-name='label-warning'] => span.label-warning
+                                p[style-name='label-danger'] => span.label-danger
+                                p[style-name='alert-text'] => alert > p
+                                p[style-name='subway-group-h1'] => nav.gc-subway > h1
+                                p[style-name='subway-section-h1'] => nav > h1.gc-thickline
+                                p[style-name='subway-nav'] => li.hidden-xs:fresh
+                                p[style-name='subway-nav-active'] => li.active
+                                p[style-name='summary'] => summary
+                                p[style-name='multi-page-start'] => ul.toc
+                                p[style-name='multi-page-end'] => div
+                                p[style-name='multi-page-item'] => li.multi:fresh
+                                p[style-name='next'] => nav.next
+                                p[style-name='previous'] => nav.previous
+                                p[style-name='H1-ILP'] => div.provisional > h1
+                                p[style-name='image-ILP'] => img.ilp
+                                p[style-name='most_requested'] => section.most_requested > h2
+                                p[style-name='mr_link'] => li.most_requested:fresh
+                                p[style-name='doormat'] => div.col-md-4 > h3:fresh
+                                p[style-name='ilp-feature'] => section.gc-feature > h2
+                                p[style-name='end-doormats'] => div.row > div.col
+                                p[style-name='ilp-feature-link'] => h3.h5
+                                p[style-name='ilp-social-media-h2'] => section.follow-us > h2
+                                p[style-name='ilp-facebook'] => li.facebook:fresh
+                                p[style-name='ilp-twitter'] => li.twitter:fresh
+                                p[style-name='ilp-youtube'] => li.youtube:fresh
+                                p[style-name='ilp-insta'] => li.instagram:fresh
+                                p[style-name='ilp-linkedin'] => li.linkedin:fresh
+                                p[style-name='ilp-contributors'] => section.gc-contributors > h2
+                                p[style-name='multi-page-active'] => li.multiactive"""
 
-    custom_styles = """ i => cite
-                        p[style-name='ordered'] => ol
-                        p[style-name='details'] => details:fresh
-                        p[style-name='btn-cta'] => a.btn-call-to-action
-                        p[style-name='btn-primary'] => a.btn-primary
-                        p[style-name='btn-secondary'] => a.btn-default
-                        p[style-name='btn-danger'] => a.btn-danger
-                        p[style-name='alert-danger'] => section.alert-danger > h2
-                        p[style-name='alert-warning'] => section.alert-warning > h2
-                        p[style-name='alert-info'] => section.alert-info > h2
-                        p[style-name='alert-success'] => section.alert-success > h2
-                        p[style-name='label-default'] => span.label-default
-                        p[style-name='label-primary'] => span.label-primary
-                        p[style-name='label-success'] => span.label-success
-                        p[style-name='label-info'] => span.label-info
-                        p[style-name='label-warning'] => span.label-warning
-                        p[style-name='label-danger'] => span.label-danger
-                        p[style-name='alert-text'] => alert > p
-                        p[style-name='subway-group-h1'] => nav.gc-subway > h1
-                        p[style-name='subway-section-h1'] => nav > h1.gc-thickline
-                        p[style-name='subway-nav'] => li.hidden-xs:fresh
-                        p[style-name='subway-nav-active'] => li.active
-                        p[style-name='summary'] => summary
-                        p[style-name='multi-page-start'] => ul.toc
-                        p[style-name='multi-page-end'] => div
-                        p[style-name='multi-page-item'] => li.multi:fresh
-                        p[style-name='next'] => nav.next
-                        p[style-name='previous'] => nav.previous
-                        p[style-name='H1-ILP'] => div.provisional > h1
-                        p[style-name='image-ILP'] => img.ilp
-                        p[style-name='most_requested'] => section.most_requested > h2
-                        p[style-name='mr_link'] => li.most_requested:fresh
-                        p[style-name='doormat'] => div.col-md-4 > h3:fresh
-                        p[style-name='ilp-feature'] => section.gc-feature > h2
-                        p[style-name='end-doormats'] => div.row > div.col
-                        p[style-name='ilp-feature-link'] => h3.h5
-                        p[style-name='ilp-social-media-h2'] => section.follow-us > h2
-                        p[style-name='ilp-facebook'] => li.facebook:fresh
-                        p[style-name='ilp-twitter'] => li.twitter:fresh
-                        p[style-name='ilp-youtube'] => li.youtube:fresh
-                        p[style-name='ilp-insta'] => li.instagram:fresh
-                        p[style-name='ilp-linkedin'] => li.linkedin:fresh
-                        p[style-name='ilp-contributors'] => section.gc-contributors > h2
-                        p[style-name='multi-page-active'] => li.multiactive"""
+
+
+
+
+            result = mammoth.convert_to_html(docx_file, style_map = custom_styles)
+            text = result.value
+            with open('tmp/doc.html', 'w', encoding= 'unicode_escape') as html_file:
+                html_file.write(text)
 
     lang = request.args.get('lang', 'en')
 
-
-
-    with file as docx_file:
-        result = mammoth.convert_to_html(docx_file, style_map = custom_styles)
-        text = result.value
-        with open('tmp/doc.html', 'w', encoding= 'unicode_escape') as html_file:
-            html_file.write(text)
-
-    file.close()
-    
     #parse the html created from the word doc
     with open("tmp/doc.html") as fp:
         soup = BeautifulSoup(fp, 'html.parser')
