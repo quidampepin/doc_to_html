@@ -1,0 +1,37 @@
+name: Source code security scan using Bandit
+on:
+  pull_request:
+    paths:
+      - "**/*.py"
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: install dev tooling
+      run: pip install requirements-dev.txt
+    - name: Bandit
+      run: make lint
+
+  bandit:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: install dev tooling
+      run: pip install requirements-dev.txt
+    - name: Bandit
+      run: make bandit
+
+  check-fmt:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: install dev tooling
+      run: pip install requirements-dev.txt
+    - name: check fmt
+      run: make fmt-ci
+        
+
+
+
