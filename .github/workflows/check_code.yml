@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: install dev tooling
-      run: pip install requirements-dev.txt
+      run: make install-dev
     - name: Bandit
       run: make lint
 
@@ -19,7 +19,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: install dev tooling
-      run: pip install requirements-dev.txt
+      run: make install-dev
     - name: Bandit
       run: make bandit
 
@@ -28,7 +28,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: install dev tooling
-      run: pip install requirements-dev.txt
+      run: make install-dev
     - name: check fmt
       run: make fmt-ci
         
