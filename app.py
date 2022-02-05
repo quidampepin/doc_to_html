@@ -1,7 +1,7 @@
 # importing libraries
 from flask import Flask
 from flask import request
-from flask import app, render_template
+from flask import render_template
 import mammoth
 from bs4 import BeautifulSoup
 from werkzeug.utils import secure_filename
