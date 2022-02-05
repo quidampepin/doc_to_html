@@ -17,8 +17,21 @@ To use the expand collapse:
 Alerts need a heading. Apply the right alert style to the heading (alert-info, alert-warning, alert-danger, etc.), and apply "alert-text" to the text within the alert.
 
 ## Running the web app
-- you need Python 3 and a few packages to run the script (see code)
-- run  the script: app.py
+
+### Without VSCode and DevContainers
+- you need Python 3 and a few packages to run the script, to install the packages run `pip3 install -r requirements.txt`
+- run  the script with the command `python3 app.py`
+
+
+### With VSCode and DevContainers
+
+If you are using VSCode and have docker engine running on your machine you can use the **Remote - Containers** plugin to create a standardized development enviroment for this project. 
+
+To install dependencies run `make install` from within the dev container.  
+To run the app run `make run` from within the devcontainer.
+
+### Once Running
+
 - go to http://127.0.0.1:5000/ in a web browser
 - select a docx document
 - this will create a page that will show the whole code in expand-collapse and the fully prototyped page
