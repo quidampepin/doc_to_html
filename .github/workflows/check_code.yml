@@ -1,4 +1,4 @@
-name: Source code security scan using Bandit
+name: Source code scans using some static analyzers
 on:
   pull_request:
     paths:
