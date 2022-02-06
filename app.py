@@ -15,6 +15,7 @@ app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
 custom_styles = open("custom_styles.txt", "r", encoding="utf-8").read()
 
+
 # Please not that this needs to be here so the page_start and page_end module variables
 # can be read, methods can only be used after they are defined in a module
 def parse_html_file(filename):
