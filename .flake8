@@ -6,6 +6,6 @@
 # E203: whitespace before ':'
 # E501: line too long
 exclude = venv*, __pycache__, node_modules, cache, migrations, build
-ignore = W503, W504, E203, E501
+ignore = W503, W504, E203, E501, C901
 max-complexity = 14
 max-line-length = 130
