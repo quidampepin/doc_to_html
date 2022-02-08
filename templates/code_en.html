@@ -264,24 +264,6 @@
                <li><strong>Between 30 and 80 words per paragraph:</strong> points go down gradually as the number goes up</li>
             </ul>
          </details>
-         <h2>Most frequent words on page</h2>
-         <details>
-            <summary>If page is in English</summary>
-            <table class="wb-tables table table-striped">
-               <tr>
-                  {% for col in word_column_names %}
-                  <th>{{col}}</th>
-                  {% endfor %}
-               </tr>
-               {% for row in row_data_word_en %}
-               <tr>
-                  {% for col, row_ in zip(word_column_names, row) %}
-                  <td>{{row_}}</td>
-                  {% endfor %}
-               </tr>
-               {% endfor %}
-            </table>
-         </details>
          <details>
             <summary>If page is in French</summary>
             <table class="wb-tables table table-striped">
