@@ -7,6 +7,7 @@ from flask import render_template
 import mammoth
 from bs4 import BeautifulSoup
 from werkzeug.utils import secure_filename
+import textstat
 
 app = Flask(__name__)
 
@@ -246,9 +247,7 @@ def readability_score(final_page):
     original_text = original_text.replace("\t", "")
     original_text = original_text.replace("\r", "")
 
-    # get initial readability total_score
-    import textstat
-
+    # get initial readability score
     original_score = textstat.flesch_kincaid_grade(original_text)
     original_score = format(original_score, ".2f")
 
@@ -277,7 +276,7 @@ def readability_score(final_page):
 
     from nltk.tokenize import RegexpTokenizer
 
-    tokenizer = RegexpTokenizer('\s+', gaps=True)
+    tokenizer = RegexpTokenizer(r"\s+", gaps=True)
     tokens = tokenizer.tokenize(revised_text)
     words = []
     for word in tokens:
