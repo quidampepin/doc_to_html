@@ -7,8 +7,6 @@ from flask import render_template
 import mammoth
 from bs4 import BeautifulSoup
 from werkzeug.utils import secure_filename
-import pandas as pd
-import nltk
 
 app = Flask(__name__)
 
@@ -279,7 +277,7 @@ def readability_score(final_page):
 
     from nltk.tokenize import RegexpTokenizer
 
-    tokenizer = RegexpTokenizer("\w+")
+    tokenizer = RegexpTokenizer('\w+')
     tokens = tokenizer.tokenize(revised_text)
     words = []
     for word in tokens:
