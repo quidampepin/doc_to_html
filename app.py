@@ -277,7 +277,7 @@ def readability_score(final_page):
 
     from nltk.tokenize import RegexpTokenizer
 
-    tokenizer = RegexpTokenizer('\w+')
+    tokenizer = RegexpTokenizer('\s+', gaps=True)
     tokens = tokenizer.tokenize(revised_text)
     words = []
     for word in tokens:
