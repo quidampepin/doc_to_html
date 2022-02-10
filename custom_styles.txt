@@ -42,4 +42,5 @@ p[style-name='ilp-youtube'] => li.youtube:fresh
 p[style-name='ilp-insta'] => li.instagram:fresh
 p[style-name='ilp-linkedin'] => li.linkedin:fresh
 p[style-name='ilp-contributors'] => section.gc-contributors > h2
+p[style-name='highlight'] => mark
 """
