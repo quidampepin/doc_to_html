@@ -205,6 +205,8 @@ def cleanup_html_data(html_data):
     filedata = filedata.replace("\\u201c", "&ldquo;")
     filedata = filedata.replace("\\u201d", "&rdquo;")
     filedata = filedata.replace("\\u2013", "&ndash;")
+    filedata = filedata.replace("\\u2014", "&mdash;")
+    filedata = filedata.replace("\\u2018", "&OpenCurlyQuote;")
     filedata = filedata.replace("\\xc0", "&Agrave;")
     filedata = filedata.replace("\\xc2", "&Acirc;")
     filedata = filedata.replace("\\xc2", "&Acirc;")
