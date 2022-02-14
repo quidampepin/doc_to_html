@@ -1,6 +1,6 @@
 # importing libraries
 import os
-
+import re
 from flask import Flask
 from flask import request
 from flask import render_template
@@ -239,15 +239,19 @@ def cleanup_html_data(html_data):
 
 def readability_score(final_page):
     # calculate readability score
-    html = final_page
+
+    html = str(final_page)
     original_soup = BeautifulSoup(html, features="lxml").find("main")
     original_text = original_soup.get_text()
     original_text = original_text.replace("..", ".")
     original_text = original_text.replace(".", ". ")
-    original_text = original_text[: original_text.find("defPreFooter")]
-    original_text = original_text.replace("\n", "")
-    original_text = original_text.replace("\t", "")
-    original_text = original_text.replace("\r", "")
+    original_text = original_text.replace("\n", " ")
+    original_text = original_text.replace("\t", " ")
+    original_text = original_text.replace("\r", " ")
+    original_text = original_text.replace("  ", " ")
+    original_text = re.sub(
+        r"(^|[.?!])\s*([a-zA-Z])", lambda p: p.group(0).upper(), original_text
+    )
 
     # get initial readability score
     original_score = textstat.flesch_kincaid_grade(original_text)
@@ -269,10 +273,13 @@ def readability_score(final_page):
     revised_text = revised_soup.get_text()
     revised_text = revised_text.replace("..", ".")
     revised_text = revised_text.replace(".", ". ")
-    revised_text = revised_text[: revised_text.find("defPreFooter")]
-    revised_text = revised_text.replace("\n", "")
-    revised_text = revised_text.replace("\t", "")
-    revised_text = revised_text.replace("\r", "")
+    revised_text = revised_text.replace("\n", " ")
+    revised_text = revised_text.replace("\t", " ")
+    revised_text = revised_text.replace("\r", " ")
+    revised_text = revised_text.replace("  ", " ")
+    revised_text = re.sub(
+        r"(^|[.?!])\s*([a-zA-Z])", lambda p: p.group(0).upper(), revised_text
+    )
 
     final_fk = textstat.flesch_kincaid_grade(revised_text)
 
@@ -403,7 +410,7 @@ def html_convert():
         len_par,
         original_score,
         fkpoints,
-    ) = readability_score(filedata3)
+    ) = readability_score(aem_page)
 
     return render_template(
         f"code_{lang}.html",
