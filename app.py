@@ -1,12 +1,13 @@
 # importing libraries
 import os
-
+import re
 from flask import Flask
 from flask import request
 from flask import render_template
 import mammoth
 from bs4 import BeautifulSoup
 from werkzeug.utils import secure_filename
+import textstat
 
 app = Flask(__name__)
 
@@ -204,6 +205,8 @@ def cleanup_html_data(html_data):
     filedata = filedata.replace("\\u201c", "&ldquo;")
     filedata = filedata.replace("\\u201d", "&rdquo;")
     filedata = filedata.replace("\\u2013", "&ndash;")
+    filedata = filedata.replace("\\u2014", "&mdash;")
+    filedata = filedata.replace("\\u2018", "&OpenCurlyQuote;")
     filedata = filedata.replace("\\xc0", "&Agrave;")
     filedata = filedata.replace("\\xc2", "&Acirc;")
     filedata = filedata.replace("\\xc2", "&Acirc;")
@@ -234,6 +237,131 @@ def cleanup_html_data(html_data):
     return (filedata, filedata2, filedata3)
 
 
+def readability_score(final_page):
+    # calculate readability score
+
+    html = str(final_page)
+    original_soup = BeautifulSoup(html, features="lxml").find("main")
+    original_text = original_soup.get_text()
+    original_text = original_text.replace("..", ".")
+    original_text = original_text.replace(".", ". ")
+    original_text = original_text.replace("\n", " ")
+    original_text = original_text.replace("\t", " ")
+    original_text = original_text.replace("\r", " ")
+    original_text = original_text.replace("  ", " ")
+    original_text = re.sub("(^|[.?!])\s*([a-zA-Z])", lambda p: p.group(0).upper(), original_text)
+
+    # get initial readability score
+    original_score = textstat.flesch_kincaid_grade(original_text)
+    original_score = format(original_score, ".2f")
+
+    # add periods after bullet points and headings so that the Flesch Kicaid score considers them as sentences
+    html1 = html.replace("</li>", ".</li>")
+    html2 = html1.replace("</h1>", ".</h1>")
+    html3 = html2.replace("</h2>", ".</h2>")
+    html4 = html3.replace("</h3>", ".</h3>")
+    html5 = html4.replace("</h4>", ".</h4>")
+    html6 = html5.replace("</h5>", ".</h5>")
+    html7 = html6.replace("</h6>", ".</h6>")
+
+    # get adjusted readability total_score
+    revised_soup = BeautifulSoup(html7, features="lxml").find("main")
+    for t in revised_soup.select("table"):
+        t.extract()
+    revised_text = revised_soup.get_text()
+    revised_text = revised_text.replace("..", ".")
+    revised_text = revised_text.replace(".", ". ")
+    revised_text = revised_text.replace("\n", " ")
+    revised_text = revised_text.replace("\t", " ")
+    revised_text = revised_text.replace("\r", " ")
+    revised_text = revised_text.replace("  ", " ")
+    revised_text = re.sub("(^|[.?!])\s*([a-zA-Z])", lambda p: p.group(0).upper(), revised_text)
+
+    final_fk = textstat.flesch_kincaid_grade(revised_text)
+
+    from nltk.tokenize import RegexpTokenizer
+
+    tokenizer = RegexpTokenizer(r"\s+", gaps=True)
+    tokens = tokenizer.tokenize(revised_text)
+    words = []
+    for word in tokens:
+        words.append(word.lower())
+
+    # get all headings and calculate how many words on average between headings
+    headings = original_soup.findAll(["h1", "h2", "h3", "h4", "h5", "h6"])
+    len_headings = len(headings)
+    hratio = len(words) / (len(headings))
+
+    # get all paragraphs and all bulleted list, and calculate how many words per paragraph on average
+    paragraphs = original_soup.findAll(["p", "ul"])
+    len_par = len(paragraphs)
+    pratio = len(words) / len(paragraphs)
+
+    # calculate points for readability
+    if final_fk <= 6:
+        fkpoints = 60
+    elif final_fk >= 18:
+        fkpoints = 0
+    else:
+        fkpoints = 60 - ((final_fk - 6) * 5)
+
+    # calculate points for number of words between headings
+    if hratio <= 40:
+        hpoints = 20
+    elif hratio >= 200:
+        hpoints = 0
+    else:
+        hpoints = 20 - ((hratio - 40) * 0.125)
+
+    # calculate points for number of words per paragraph
+    if pratio <= 30:
+        ppoints = 20
+    elif pratio >= 80:
+        ppoints = 0
+    else:
+        ppoints = 20 - ((pratio - 30) * 0.4)
+
+    # add all points
+    total_score = fkpoints + hpoints + ppoints
+    total_score = format(total_score, ".2f")
+    fkpoints = format(fkpoints, ".2f")
+    final_fk_score = format(final_fk, ".2f")
+    hpoints = format(hpoints, ".2f")
+    hratio = format(hratio, ".2f")
+    ppoints = format(ppoints, ".2f")
+    pratio = format(pratio, ".2f")
+    total_words = len(words)
+
+    total_score = float(total_score)
+    if total_score >= 90:
+        score = "Outstanding! Excellent!"
+    elif total_score >= 80 and total_score < 90:
+        score = "Very good! Très bien!"
+    elif total_score >= 70 and total_score < 80:
+        score = "Not too bad. Pas mal."
+    elif total_score >= 60 and total_score < 70:
+        score = "Needs work. À travailler"
+    elif total_score >= 50 and total_score < 60:
+        score = "Needs a lot of work. Besoin de beaucoup de travail"
+    elif total_score < 50:
+        score = "Please don't do this to people... S'il vous plaît, il faut faire quelque chose...."
+
+    return (
+        total_score,
+        final_fk_score,
+        hpoints,
+        hratio,
+        ppoints,
+        pratio,
+        total_words,
+        score,
+        len_headings,
+        len_par,
+        original_score,
+        fkpoints,
+    )
+
+
 @app.route("/html_convert", methods=["GET", "POST"])
 def html_convert():
     """Convert Docx to HTML"""
@@ -258,14 +386,46 @@ def html_convert():
     combined_page = f"{str(page_start[lang])}{str(soup)}{str(page_end[lang])}"
 
     # clean up the generated html page into filedata
-
     (filedata, _, filedata3) = cleanup_html_data(combined_page)
     # write the cleaned up filedata to the html page
     html_page = BeautifulSoup(filedata, "html.parser")
     aem_page = BeautifulSoup(filedata3, "html.parser")
 
+    # get readanility score
+
+    (
+        total_score,
+        final_fk_score,
+        hpoints,
+        hratio,
+        ppoints,
+        pratio,
+        total_words,
+        score,
+        len_headings,
+        len_par,
+        original_score,
+        fkpoints,
+    ) = readability_score(aem_page)
+
     return render_template(
-        f"code_{lang}.html", lang=lang, html_page=html_page, aem_page=aem_page
+        f"code_{lang}.html",
+        lang=lang,
+        html_page=html_page,
+        aem_page=aem_page,
+        total_score=total_score,
+        fkpoints=fkpoints,
+        final_fk_score=final_fk_score,
+        hpoints=hpoints,
+        hratio=hratio,
+        ppoints=ppoints,
+        pratio=pratio,
+        total_words=total_words,
+        zip=zip,
+        score=score,
+        len_headings=len_headings,
+        len_par=len_par,
+        original_score=original_score,
     )
 
 
