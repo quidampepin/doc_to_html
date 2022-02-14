@@ -239,7 +239,6 @@ def cleanup_html_data(html_data):
 
 def readability_score(final_page):
     # calculate readability score
-
     html = str(final_page)
     original_soup = BeautifulSoup(html, features="lxml").find("main")
     original_text = original_soup.get_text()
@@ -407,6 +406,7 @@ def html_convert():
         original_score,
         fkpoints,
     ) = readability_score(aem_page)
+
 
     return render_template(
         f"code_{lang}.html",

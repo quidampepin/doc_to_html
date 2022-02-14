@@ -195,7 +195,102 @@
                 <code id="myAEMCode">{{aem_page}}
                 </code></pre></details>
 
-                </section>
+
+
+                <details>
+                <summary>Readability score - Experimental</summary>
+				 <div class="panel panel-default">
+					 <div class="panel-body">
+						 <p class="big-font"><strong>{{ total_score }}/100</strong> </p>
+						 <p>{{ score }}</p>
+						</div>
+					</div>
+         <details>
+            <summary>Meaning of score</summary>
+            <ul>
+               <li><strong>90 points or more:</strong>: Outstanding! </li>
+               <li><strong>Between 80 and 90 points:</strong> Very good!</li>
+               <li><strong>Between 70 and 80 points:</strong> Not too bad</li>
+               <li><strong>Between 60 and 70 points:</strong> Needs work</li>
+               <li><strong>Between 50 and 60 points:</strong> Needs a lot of work</li>
+               <li><strong>Under 50 points:</strong> Please don't do this to people...</li>
+            </ul>
+         </details>
+         <h2>Total score details</h2>
+         <h3>Readability points</h3>
+         <p><strong>{{ fkpoints }}/60 </strong></p>
+         <p>Adjusted Flesch-Kincaid readability score of: {{ final_fk_score }}</p>
+         <details>
+            <summary>Calculation of readability points</summary>
+            <p><strong>Basic Flesch-Kincaid</strong> uses 2 variables to get a score:</p>
+            <ul>
+               <li>average sentence length</li>
+               <li>average number of syllables per word</li>
+            </ul>
+            <p>This calculation doesn't handle headings and bullet points very well. If there isn't a period at the end of a heading or a bullet item, it considers it to be still the same sentence.</p>
+            <p>The <strong>adjusted Flesch-Kincaid readability score</strong> considers each heading and each item in a bullet list as a separate sentence.</p>
+            <p>Points are attributed using this calculation:</p>
+            <ul>
+               <li><strong>Grade 6 or under:</strong> 60/60</li>
+               <li><strong>Grade 18 or over:</strong> 0/60</li>
+               <li><strong>Between grade 6 and grade 18:</strong> points go down gradually as the grade goes up</li>
+            </ul>
+         </details>
+         <h3>Heading points</h3>
+         <p><strong>{{ hpoints }}/20</strong></p>
+         <p>Words per heading: {{ hratio }}</p>
+         <details>
+            <summary>Calculation of heading points</summary>
+            <p>Because it's generally a good idea to use headings and subheadings, points are attributed based on the average number of words between each heading. </p>
+            <p>The total number of words is divided by the number of individual headings (h1, h2, h3, h4, etc.)</p>
+            <p>Points are attributed using this calculation:</p>
+            <ul>
+               <li><strong>40 words per heading or less:</strong> 20/20</li>
+               <li><strong>200 words per heading or more:</strong> 0/20</li>
+               <li><strong>Between 40 and 200 words per heading:</strong> points go down gradually as the number goes up</li>
+            </ul>
+         </details>
+         <h3>Paragraph points</h3>
+         <p><strong>{{ ppoints }}/20</strong></p>
+         <p>Words per paragraph: {{ pratio }}</p>
+         <details>
+            <summary>Calculation of paragraph points</summary>
+            <p>Because it's generally a good idea to use use paragraphs and avoid a wall of text, points are attributed based on the average number of words in each paragraph. </p>
+            <p>The total number of words is divided by the number of paragraphs</p>
+            <p>Points are attributed using this calculation:</p>
+            <ul>
+               <li><strong>30 words per paragrah or less:</strong> 20/20</li>
+               <li><strong>80 words per paragraph or more:</strong> 0/20</li>
+               <li><strong>Between 30 and 80 words per paragraph:</strong> points go down gradually as the number goes up</li>
+            </ul>
+         </details>
+
+         <h2>Stastitics</h2>
+         <ul>
+            <li><strong>Words:</strong> {{ total_words }}</li>
+            <li><strong>Paragraphs:</strong> {{ len_par }} </li>
+            <li><strong>Headings:</strong> {{ len_headings }} </li>
+            <li><strong>Original Flesch-Kincaid score :</strong> {{ original_score }} (that's the score without considering headings and list items as separate sentences)</li>
+         </ul>
+				 <h2>Improving web readability</h2>
+         <p>To improve web readability, follow web writing best practices, like: </p>
+				 <ul>
+            <li>use simple words</li>
+            <li>write short sentences and paragraphs</li>
+            <li>use subheadings and lists to help people scan the page</li>
+         </ul>
+
+         <p><a href='https://www.canada.ca/en/treasury-board-secretariat/services/government-communications/canada-content-style-guide.html'>Follow the Canada.ca Content Style Guide</a></p>
+
+         <h2>How to use this score</h2>
+         <p><strong>This is an experimental score</strong>. Do not use it as an accurate measure of readability or to assess conformity to a performance indicator. </p>
+         <p>It is designed to give a general idea of the page's web readability. A good score doesn't guarantee that the page is usable or useful.</p>
+         <p>This tool scrapes the text that figures in the <code>main</code> tag in the HTML page. This may include some text not visible to people. The tool excludes text in tables for calculation purposes.</p>
+
+         </details>
+
+
+       </section>
 
                 <a type="button" class="btn btn-default mrgn-tp-md" href="https://doc-to-html.herokuapp.com/">Upload another document</a>
                 <h2>Prototyped page</h2>

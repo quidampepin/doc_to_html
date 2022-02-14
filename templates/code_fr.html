@@ -192,6 +192,98 @@
 <code id="myAEMCode">{{aem_page}}
 </code></pre></details>
 
+
+<details>
+<summary>Score de lisibilité (expérimental)</summary>
+				 <div class="panel panel-default">
+					 <div class="panel-body">
+						 <p class="big-font"><strong>{{ total_score }}/100</strong> </p>
+						 <p>{{ score }}</p>
+						</div>
+					</div>
+         <details>
+            <summary>Signification du score</summary>
+            <ul>
+               <li><strong>90 points ou plus :</strong> Excellent! </li>
+               <li><strong>Entre 80 et 90 points :</strong> Très bien!</li>
+               <li><strong>Entre 70 et 80 points :</strong> Pas mal</li>
+               <li><strong>Entre 60 et 70 points :</strong> À travailler</li>
+               <li><strong>Entre 50 et 60 points : </strong> Besoin de beaucoup de travail</li>
+               <li><strong>Moins de 50 points :</strong> S'il vous plaît, il faut faire quelque chose...</li>
+            </ul>
+         </details>
+         <h2>Détails du score total</h2>
+         <h3>Points de lisibilité</h3>
+         <p><strong>{{ fkpoints }}/60 </strong></p>
+         <p>Score de lisibilité Flesch-Kincaid ajusté : {{ final_fk_score }}</p>
+         <details>
+            <summary>Calcul des points de lisibilité</summary>
+            <p><strong>Le score Flesch-Kincaid de base</strong> utilise 2 variables pour obtenir une note:
+            <p>
+            <ul>
+               <li>la longueur moyenne des phrases</li>
+               <li>le nombre moyen de syllabes par mot</li>
+            </ul>
+            <p>Ce calcul ne gère pas très bien les en-têtes et les listes à puces. S'il n'y a pas de point à la fin d'une en-tête ou d'une puce, il considère qu'il s'agit toujours de la même phrase.</p>
+            <p>Le <strong>Score de lisibilité Flesch-Kincaid ajusté</strong> considère chaque en-tête et chaque élément d'une liste à puce comme des phrases distinctes.</p>
+            <p>Les points sont attribués en utilisant ce calcul : </p>
+            <ul>
+               <li><strong>Niveau 6 ou inférieur</strong>: 60/60</li>
+               <li><strong>Niveau 18 ou supérieur</strong>: 0/60</li>
+               <li><strong>Entre le niveau 6 et le niveau 18</strong>: le nombre de points diminue à mesure que le niveau augmente.</li>
+            </ul>
+         </details>
+         <h3>Points pour les en-têtes</h3>
+         <p><strong>{{ hpoints }}/20</strong></p>
+         <p>Mots par en-tête : {{ hratio }}</p>
+         <details>
+            <summary>Calcul des points pour les en-têtes</summary>
+            <p>Puisque c'est généralement une bonne idée d'ajouter des en-têtes, les points sont attribués en se basant sur le nombre de mots moyen entre chaque en-tête.</p>
+            <p>Le nombre total de mots est divisé par le nombre d'en-têtes individuels (h1, h2, h3, h4, etc.)</p>
+            <p>Les points sont attribués en utilisant ce calcul : </p>
+            <ul>
+               <li><strong>40 mots par en-tête ou moins :</strong> 20/20</li>
+               <li><strong>200 mots par en-tête ou plus :</strong> 0/20</li>
+               <li><strong>Entre 40 et 200 mots par en-tête : </strong> le nombre de points diminue à mesure que le nombre de mots par en-tête augmente.</li>
+            </ul>
+         </details>
+         <h3>Points pour les paragraphes</h3>
+         <p><strong>{{ ppoints }}/20</strong></p>
+         <p>Mots par paragraphe : {{ pratio }}</p>
+         <details>
+            <summary>Calcul des points pour les paragraphes</summary>
+            <p>Puisque c'est généralement une bonne idée d'utiliser des paragrahes et d'éviter les murs de mots, les points sont attribués en se basant sur le nombre de mots moyen par paragraphe.</p>
+            <p>Le nombre total de mots est divisé par le nombre de paragraphes. </p>
+            <p>Les points sont attribués en utilisant ce calcul : </p>
+            <ul>
+               <li><strong>30 mots par paragraphe ou moins :</strong> 20/20</li>
+               <li><strong>80 mots par paragraphe ou plus :</strong> 0/20</li>
+               <li><strong>Entre 30 et 80 mots par paragraphe :</strong>  le nombre de points diminue à mesure que le nombre de mots par paragraphe augmente.</li>
+            </ul>
+         </details>
+         <h2>Statistiques</h2>
+         <ul>
+            <li><strong>Mots :</strong> {{ total_words }}</li>
+            <li><strong>Paragraphes :</strong> {{ len_par }} </li>
+            <li><strong>En-têtes :</strong> {{ len_headings }} </li>
+            <li><strong>Score Flesch-Kincaid original:</strong> {{ original_score }} (ceci est le score sans considérer les en-têtes et les éléments d'une liste comme des phrases séparées)</li>
+         </ul>
+				 <h2>Améliorer la lisibilité Web</h2>
+         <p>Pour améliorer la lisibilité Web, suivez les meilleures pratiques en matière d'écriture pour le web, telles que: </p>
+				 <ul>
+            <li>utilisez des mots simples</li>
+            <li>écrivez des phrases courtes et des paragraphes courts</li>
+            <li>utilisez des sous-titres et des listes pour aider les gens à survoler la page</li>
+         </ul>
+				 <p><a href='https://www.canada.ca/fr/secretariat-conseil-tresor/services/communications-gouvernementales/guide-redaction-contenu-canada.html'>Suivez le Guide de rédaction du contenu du site Canada.ca</a></p>
+
+         <h2>Comment utiliser cet outil</h2>
+         <p><strong>Il s'agit d'un outil expérimental.</strong>. Ne l'utilisez pas comme une mesure précise de la lisibilité ou pour évaluer la conformité à un indicateur de performance.</p>
+         <p>Il est conçu pour donner une idée générale de la lisibilité d'une page sur le web. Un bon score ne garantit pas que la page soit conviviale ou utile.</p>
+         <p>Cet outil utilise le texte qui figure dans la balise <code>main</code> de la page HTML. Ceci peut inclure du texte qui n'est pas visible pour les gens. L'outil exclut le texte qui se trouve dans un tableau pour les besoins du calcul.</p>
+         <p>Voir le code et la méthodologie sur GitHub:</p>
+         <a href='https://github.com/alpha-canada-ca/lisibilite-web-readability'>https://github.com/alpha-canada-ca/lisibilite-web-readability</a>
+       </details>
 </section>
 
 <a type="button" class="btn btn-default mrgn-tp-md" href="https://doc-to-html.herokuapp.com/?&lang=fr">Téléverser un autre document</a>

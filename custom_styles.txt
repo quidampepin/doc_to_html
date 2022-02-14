@@ -24,6 +24,7 @@ p[style-name='summary'] => summary
 p[style-name='multi-page-start'] => ul.toc
 p[style-name='multi-page-end'] => div
 p[style-name='multi-page-item'] => li.multi:fresh
+p[style-name='multi-page-active'] => li.multiactive
 p[style-name='next'] => nav.next
 p[style-name='previous'] => nav.previous
 p[style-name='H1-ILP'] => div.provisional > h1
@@ -41,4 +42,5 @@ p[style-name='ilp-youtube'] => li.youtube:fresh
 p[style-name='ilp-insta'] => li.instagram:fresh
 p[style-name='ilp-linkedin'] => li.linkedin:fresh
 p[style-name='ilp-contributors'] => section.gc-contributors > h2
-p[style-name='multi-page-active'] => li.multiactive"""
+p[style-name='highlight'] => mark
+"""
