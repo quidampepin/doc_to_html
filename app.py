@@ -239,6 +239,7 @@ def cleanup_html_data(html_data):
 
 def readability_score(final_page):
     # calculate readability score
+
     html = str(final_page)
     original_soup = BeautifulSoup(html, features="lxml").find("main")
     original_text = original_soup.get_text()
@@ -248,7 +249,7 @@ def readability_score(final_page):
     original_text = original_text.replace("\t", " ")
     original_text = original_text.replace("\r", " ")
     original_text = original_text.replace("  ", " ")
-    original_text = re.sub("(^|[.?!])\s*([a-zA-Z])", lambda p: p.group(0).upper(), original_text)
+    original_text = re.sub(r"(^|[.?!])\s*([a-zA-Z])", lambda p: p.group(0).upper(), original_text)
 
     # get initial readability score
     original_score = textstat.flesch_kincaid_grade(original_text)
@@ -274,7 +275,7 @@ def readability_score(final_page):
     revised_text = revised_text.replace("\t", " ")
     revised_text = revised_text.replace("\r", " ")
     revised_text = revised_text.replace("  ", " ")
-    revised_text = re.sub("(^|[.?!])\s*([a-zA-Z])", lambda p: p.group(0).upper(), revised_text)
+    revised_text = re.sub("r(^|[.?!])\s*([a-zA-Z])", lambda p: p.group(0).upper(), revised_text)
 
     final_fk = textstat.flesch_kincaid_grade(revised_text)
 
@@ -406,7 +407,6 @@ def html_convert():
         original_score,
         fkpoints,
     ) = readability_score(aem_page)
-
 
     return render_template(
         f"code_{lang}.html",
