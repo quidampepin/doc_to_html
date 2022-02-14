@@ -275,7 +275,7 @@ def readability_score(final_page):
     revised_text = revised_text.replace("\t", " ")
     revised_text = revised_text.replace("\r", " ")
     revised_text = revised_text.replace("  ", " ")
-    revised_text = re.sub("r(^|[.?!])\s*([a-zA-Z])", lambda p: p.group(0).upper(), revised_text)
+    revised_text = re.sub(r"(^|[.?!])\s*([a-zA-Z])", lambda p: p.group(0).upper(), revised_text)
 
     final_fk = textstat.flesch_kincaid_grade(revised_text)
 
