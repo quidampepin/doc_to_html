@@ -3,7 +3,7 @@
    <head>
       <meta charset="utf-8">
       <!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW) wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
-      <title>From DOCX to HTML</title>
+      <title>From DOCX to Canada.ca - Instructions</title>
       <meta content="width=device-width,initial-scale=1" name="viewport">
       <!-- Meta data -->
       <meta name="description" content="Experimental DOCX to HTML converter">
@@ -105,8 +105,8 @@
                      <!-- If you want to use the settings or sign in/out buttons then add col-sm-7 -->
                      <section class="col-xs-12">
                         <!-- Add in your application name and URL below -->
-                        <h2 class="wb-inv">From DOCX to HTML</h2>
-                        <a class="app-name" href=#>From DOCX to HTML</a>
+                        <h2 class="wb-inv">From DOCX to Canada.ca</h2>
+                        <a class="app-name" href=#>From DOCX to Canada.ca</a>
                      </section>
                      <!-- If you want to use the settings or sign in/out buttons
                         <nav class="col-sm-5 hidden-xs hidden-print">
@@ -146,10 +146,10 @@
          var defTop = document.getElementById("def-top");
          defTop.outerHTML = wet.builder.appTop({
 
-         	"appName": [{"text": "Convert DOCX to HTML", "href": "#"}],
+         	"appName": [{"text": "Convert DOCX to Canada.ca", "href": "/"}],
          	"lngLinks": [{"lang": "fr",	"href": "#", "text": "Français"}],
           "menuLinks": [
-            {"text":"Convert DOCX", "href":"/"},
+            {"text":"Upload DOCX", "href":"/"},
             {"text":"Instructions", "href":"/instructions"
           }]
          });
@@ -174,17 +174,31 @@
 
            <h2 class="h3">On this page</h2>
    <ul>
-      <li><a href="#_Use_the_Word">Use the Word template</a></li>
-      <li><a href="#_Use_Word_styles">Use Word styles</a></li>
-      <li><a href="#_Sample_Word_documents">Sample Word documents</a></li>
-      <li><a href="#_Use_code_in">Use code in prototypes</a></li>
+      <li><a href="#_Use_the_Word">Step 1: Use the Word template</a></li>
+      <li><a href="#_Use_Word_styles">Step 2: Apply Word styles</a></li>
+      <li><a href="#_Upload">Step 3: Upload doc</a></li>
+      <li><a href="#_Use_code_in">Step 4: Use code in prototypes</a></li>
    </ul>
-   <h2 id="_Use_the_Word">Use the Word template</h2>
-   <p>To get the most out of this, use this MS Word template:</p>
+   <h2 id="_Use_the_Word">Step 1: Use the Word template</h2>
+   <p>Use this MS Word template:</p>
    <p><a href="https://github.com/quidampepin/doc_to_html/raw/main/word_template/template.dotx">Download MS Word template</a></p>
-   <p>In your Word doc, go to File &gt; Options, and select Add-ins. At the bottom, go to Manage, select Templates, and click Go. Click on Attach and select the template your downloaded. Tick "Automatically update document styles". Click OK.</p>
-   <h2 id="_Use_Word_styles">Use Word styles</h2>
-   <p>Basic styles (headings, bullet lists, bold, italics, etc.) will work seamlessly and be turned into the right HTML elements. Some custom styles have been added (available in the styles in the ribbon).</p>
+    <p>In your Word doc, go to File &gt; Options, and select Add-ins. At the bottom, go to Manage, select Templates, and click Go. Click on Attach and select the template your downloaded. Tick "Automatically update document styles". Click OK.</p>
+
+    <p>You can also start from one of the sample documents:</p>
+    <details>
+       <summary>Sample documents</summary>
+    <ul>
+       <li><a href="https://github.com/quidampepin/doc_to_html/raw/main/sample_docs/simple_formatting.docx">Basic formatting</a></li>
+       <li><a href="https://github.com/quidampepin/doc_to_html/raw/main/sample_docs/subway_nav.docx">Subway navigation</a></li>
+       <li><a href="https://github.com/quidampepin/doc_to_html/raw/main/sample_docs/ineternal_links.docx">Internal links (automatic anchoring)</a></li>
+       <li><a href="https://github.com/quidampepin/doc_to_html/raw/main/sample_docs/multi_page_nav.docx">Multi-page navigation</a></li>
+       <li><a href="https://github.com/quidampepin/doc_to_html/raw/main/sample_docs/topic.docx">Topic page (Beta)</a></li>
+    </ul>
+  </details>
+
+   <h2 id="_Use_Word_styles">Step 2: Apply Word styles</h2>
+   <p>Basic styles (headings, bullet lists, bold, italics, etc.) will work seamlessly and be turned into the right HTML elements. </p>
+   <p>Some custom styles have been added (available in MS Word in the styles ribbon):</p>
    <details>
       <summary>Alerts</summary>
       <p>Alerts need a heading. Apply the right alert style to the heading (alert-info, alert-warning, alert-danger, etc.), and apply "alert-text" to the text within the alert.</p>
@@ -237,16 +251,11 @@
          <li>apply the "subway-section-h1" style to the H1 of the page you're on (right after the list of subway items)</li>
       </ul>
    </details>
-   <h2 id="_Sample_Word_documents">Sample Word documents</h2>
-   <p>Download these word docs to see how some formatting is done and to test the tool.</p>
-   <ul>
-      <li><a href="https://github.com/quidampepin/doc_to_html/raw/main/sample_docs/simple_formatting.docx">Basic formatting</a></li>
-      <li><a href="https://github.com/quidampepin/doc_to_html/raw/main/sample_docs/subway_nav.docx">Subway navigation</a></li>
-      <li><a href="https://github.com/quidampepin/doc_to_html/raw/main/sample_docs/ineternal_links.docx">Internal links (automatic anchoring)</a></li>
-      <li><a href="https://github.com/quidampepin/doc_to_html/raw/main/sample_docs/multi_page_nav.docx">Multi-page navigation</a></li>
-      <li><a href="https://github.com/quidampepin/doc_to_html/raw/main/sample_docs/topic.docx">Topic page (Beta)</a></li>
-   </ul>
-   <h2 id="_Use_code_in">Use code in prototypes</h2>
+   <h2 id="_Upload">Step 3: Upload doc</h2>
+
+   <p>Click on <a href="/">Upload DOCX</a>, then click on Upload DOCX file.</p>
+
+   <h2 id="_Use_code_in">Step 4: Use code in prototypes</h2>
    <p>The script generates 2 code snippets: the code for the full page (that you copy in GitHub, for example), and the code for the main section (that you can copy in AEM, for example). </p>
    <h3>Code for full page</h3>
    <ul>

@@ -3,7 +3,7 @@
    <head>
       <meta charset="utf-8">
       <!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW) wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
-      <title>From DOCX to HTML</title>
+      <title>From DOCX to Canada.ca</title>
       <meta content="width=device-width,initial-scale=1" name="viewport">
       <!-- Meta data -->
       <meta name="description" content="Experimental web readability score">
@@ -105,8 +105,8 @@
                      <!-- If you want to use the settings or sign in/out buttons then add col-sm-7 -->
                      <section class="col-xs-12">
                         <!-- Add in your application name and URL below -->
-                        <h2 class="wb-inv">From DOCX to HTML</h2>
-                        <a class="app-name" href=#>From DOCX to HTML</a>
+                        <h2 class="wb-inv">From DOCX to Canada.ca</h2>
+                        <a class="app-name" href=#>From DOCX to Canada.ca</a>
                      </section>
                      <!-- If you want to use the settings or sign in/out buttons
                         <nav class="col-sm-5 hidden-xs hidden-print">
@@ -146,17 +146,17 @@
          var defTop = document.getElementById("def-top");
          defTop.outerHTML = wet.builder.appTop({
 
-         	"appName": [{"text": "Convert DOCX to HTML", "href": "#"}],
+         	"appName": [{"text": "Convert DOCX to Canada.ca", "href": "#"}],
          	"lngLinks": [{"lang": "fr",	"href": "#", "text": "Français"}],
           "menuLinks": [
-            {"text":"Convert DOCX", "href":"/"},
+            {"text":"Upload DOCX", "href":"/"},
             {"text":"Instructions", "href":"/instructions"
           }]
          });
       </script>
       <main role="main" property="mainContentOfPage" class="container wb-prettify all-pre">
 
-         <h1>Convert DOCX</h1>
+         <h1>Upload DOCX</h1>
          <script>
             let langElem = document.getElementById("wb-lng").getElementsByTagName("a")[0];
             let toggleURL = window.location + "";
@@ -173,10 +173,10 @@
          <div class="container">
 
 
-           <p>Select a Word document to convert it to HTML:</p>
+           <p>Upload a Word document to convert it to HTML code for Canada.ca:</p>
            <form method="POST" action="/html_convert" enctype="multipart/form-data">
             <div>
-                <label for="files" class="btn btn-primary">Select file</label>
+                <label for="files" class="btn btn-call-to-action">Upload DOCX</label>
                 <input  id="files" style="visibility:hidden;" type="file" name="file" accept=".doc,.docx" onchange="form.submit()"/>
               </div>
 
