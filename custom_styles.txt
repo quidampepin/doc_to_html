@@ -44,4 +44,11 @@ p[style-name='ilp-linkedin'] => li.linkedin:fresh
 p[style-name='ilp-contributors'] => section.gc-contributors > h2
 p[style-name='highlight'] => mark
 p[style-name='well'] => div.well
+p[style-name='panel-default'] => section.panel-default > header.panel-heading > h5.panel-title
+p[style-name='panel-info'] => section.panel-info > header.panel-heading > h5.panel-title
+p[style-name='panel-primary'] => section.panel-primary > header.panel-heading > h5.panel-title
+p[style-name='panel-success'] => section.panel-success > header.panel-heading > h5.panel-title
+p[style-name='panel-warning'] => section.panel-warning > header.panel-heading > h5.panel-title
+p[style-name='panel-danger'] => section.panel-danger > header.panel-heading > h5.panel-title
+p[style-name='panel-text'] => panel > div.panel-body > p
 """
