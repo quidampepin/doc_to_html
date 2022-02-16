@@ -15,7 +15,8 @@ p[style-name='label-success'] => span.label-success
 p[style-name='label-info'] => span.label-info
 p[style-name='label-warning'] => span.label-warning
 p[style-name='label-danger'] => span.label-danger
-p[style-name='alert-text'] => alert > p
+p[style-name='alert-text'] => alert > p:fresh
+p[style-name='alert-bullet'] => alert > ul > li:fresh
 p[style-name='subway-group-h1'] => nav.gc-subway > h1
 p[style-name='subway-section-h1'] => nav > h1.gc-thickline
 p[style-name='subway-nav'] => li.hidden-xs:fresh
@@ -50,5 +51,6 @@ p[style-name='panel-primary'] => section.panel-primary > header.panel-heading > 
 p[style-name='panel-success'] => section.panel-success > header.panel-heading > h5.panel-title
 p[style-name='panel-warning'] => section.panel-warning > header.panel-heading > h5.panel-title
 p[style-name='panel-danger'] => section.panel-danger > header.panel-heading > h5.panel-title
-p[style-name='panel-text'] => panel > div.panel-body > p
+p[style-name='panel-text'] => panel > div.panel-body > p:fresh
+p[style-name='panel-bullet'] => panel > div.panel-body > ul > li:fresh
 """
