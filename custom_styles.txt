@@ -44,7 +44,9 @@ p[style-name='ilp-insta'] => li.instagram:fresh
 p[style-name='ilp-linkedin'] => li.linkedin:fresh
 p[style-name='ilp-contributors'] => section.gc-contributors > h2
 p[style-name='highlight'] => mark
-p[style-name='well'] => div.well
+p[style-name='well'] => div.well:fresh > p
+p[style-name='well-paragraph'] => well > p:fresh
+p[style-name='well-bullet'] => well > ul > li:fresh
 p[style-name='panel-default'] => section.panel-default > header.panel-heading > h5.panel-title
 p[style-name='panel-info'] => section.panel-info > header.panel-heading > h5.panel-title
 p[style-name='panel-primary'] => section.panel-primary > header.panel-heading > h5.panel-title

@@ -213,6 +213,8 @@ def cleanup_html_data(html_data):
     )
     filedata = filedata.replace("</section><panel>", "")
     filedata = filedata.replace("</panel>", "</section>")
+    filedata = filedata.replace("</div><well>", "")
+    filedata = filedata.replace("</well>", "</div>")
     filedata = filedata.replace("<h2><a id=", "<h2 id=")
     filedata = filedata.replace("<h3><a id=", "<h3 id=")
     filedata = filedata.replace("<h4><a id=", "<h4 id=")
