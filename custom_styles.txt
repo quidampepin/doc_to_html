@@ -55,4 +55,7 @@ p[style-name='panel-warning'] => section.panel-warning > header.panel-heading > 
 p[style-name='panel-danger'] => section.panel-danger > header.panel-heading > h5.panel-title
 p[style-name='panel-text'] => panel > div.panel-body > p:fresh
 p[style-name='panel-bullet'] => panel > div.panel-body > ul > li:fresh
+p[style-name='quote'] => blockquote:fresh > p
+p[style-name='quote-par'] => blockquote > p:fresh
+p[style-name='quote-source'] => footer
 """

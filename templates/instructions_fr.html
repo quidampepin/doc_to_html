@@ -200,6 +200,14 @@
     <h2 id="_Use_Word_styles"><a id="_Utiliser_les_styles">Étape 2 : appliquer les styles Word</a></h2>
     <p>Les styles de base (titres, listes à puces, gras, italique, etc.) fonctionneront sans problème et seront transformés en éléments HTML appropriés. Certains styles personnalisés ont été ajoutés (disponibles dans le ruban styles).</p>
     <details>
+       <summary>Afficher-masquer</summary>
+       <ul>
+          <li>Appliquez le style "summary" à la partie visible de l'élément afficher-masquer.</li>
+          <li>Utilisez n'importe quel style pour la partie du contenu qui est cachée</li>
+          <li>Après la partie cachée, ajoutez le mot "end" (sans majuscules, sans gras, rien), et appliquez le style "details" à ce mot. Cela indiquera au script quand fermer la balise HTML "details".</li>
+       </ul>
+    </details>
+    <details>
        <summary>Alertes</summary>
        <p>Les alertes ont besoin d'un titre. Appliquez le bon style d'alerte à l'en-tête (alert-info, alert-warning, alert-danger, etc.), et appliquez "alert-text" au texte de l'alerte.</p>
     </details>
@@ -215,13 +223,18 @@
        <summary>Boutons</summary>
        <p>Appliquez le bon style de bouton au texte (btn-cta, btn-danger, btn-primaire, etc.). Veillez à ajouter un lien hypertexte au texte du bouton.</p>
     </details>
+
     <details>
-       <summary>Afficher-masquer</summary>
-       <ul>
-          <li>Appliquez le style "summary" à la partie visible de l'élément afficher-masquer.</li>
-          <li>Utilisez n'importe quel style pour la partie du contenu qui est cachée</li>
-          <li>Après la partie cachée, ajoutez le mot "end" (sans majuscules, sans gras, rien), et appliquez le style "details" à ce mot. Cela indiquera au script quand fermer la balise HTML "details".</li>
-       </ul>
+       <summary>Citations</summary>
+         <ul>
+           <li>Appliquez le style "quote" au premier paragraphe que vous voulez voir apparaître comme citation</li>
+           <li>Appliquez le style "quote-par" pour un autre paragraphe que vous voulez apparaître dans la même citation</li>
+           <li>Appliquez le style "quote-source" pour indiquer la source de la citation (facultatif)</li>
+         </ul>
+    </details>
+    <details>
+       <summary>Étiquettes</summary>
+       <p>Appliquez le bon style d'étiquette au texte (label-danger, label-default, label-info, label-primary, etc.).</p>
     </details>
     <details>
        <summary>Liens internes</summary>
@@ -233,10 +246,7 @@
           <li>Sélectionnez l'en-tête vers lequel vous voulez que le lien se dirige.</li>
        </ul>
     </details>
-    <details>
-       <summary>Étiquettes</summary>
-       <p>Appliquez le bon style d'étiquette au texte (label-danger, label-default, label-info, label-primary, etc.).</p>
-    </details>
+
     <details>
        <summary>Navigation multi-pages</summary>
        <ul>
