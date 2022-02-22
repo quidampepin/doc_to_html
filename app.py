@@ -196,25 +196,17 @@ def cleanup_html_data(html_data):
         '</ul></section></div></div><section class="provisional gc-contributors">',
     )
     filedata = filedata.replace('class="panel-default"', 'class="panel panel-default"')
-    filedata = filedata.replace(
-        'class="panel-info"', 'class="panel panel-default panel-info"'
-    )
-    filedata = filedata.replace(
-        'class="panel-primary"', 'class="panel panel-default panel-primary"'
-    )
-    filedata = filedata.replace(
-        'class="panel-success"', 'class="panel panel-default panel-success"'
-    )
-    filedata = filedata.replace(
-        'class="panel-warning"', 'class="panel panel-default panel-warning"'
-    )
-    filedata = filedata.replace(
-        'class="panel-danger"', 'class="panel panel-default panel-danger"'
-    )
-    filedata = filedata.replace("</section><panel>", "")
-    filedata = filedata.replace("</panel>", "</section>")
-    filedata = filedata.replace("</div><well>", "")
-    filedata = filedata.replace("</well>", "</div>")
+    filedata = filedata.replace('class="panel-info"', 'class="panel panel-default panel-info"')
+    filedata = filedata.replace('class="panel-primary"', 'class="panel panel-default panel-primary"')
+    filedata = filedata.replace('class="panel-success"', 'class="panel panel-default panel-success"')
+    filedata = filedata.replace('class="panel-warning"', 'class="panel panel-default panel-warning"')
+    filedata = filedata.replace('class="panel-danger"', 'class="panel panel-default panel-danger"')
+    filedata = filedata.replace('</section><panel>', '')
+    filedata = filedata.replace('</panel>', '</section>')
+    filedata = filedata.replace('</div><well>', '')
+    filedata = filedata.replace('</well>', '</div>')
+    filedata = filedata.replace('</blockquote><footer>', '<footer>')
+    filedata = filedata.replace('</footer>', '</footer></blockquote>')
     filedata = filedata.replace("<h2><a id=", "<h2 id=")
     filedata = filedata.replace("<h3><a id=", "<h3 id=")
     filedata = filedata.replace("<h4><a id=", "<h4 id=")
@@ -269,9 +261,7 @@ def readability_score(final_page):
     original_text = original_text.replace("\t", " ")
     original_text = original_text.replace("\r", " ")
     original_text = original_text.replace("  ", " ")
-    original_text = re.sub(
-        r"(^|[.?!])\s*([a-zA-Z])", lambda p: p.group(0).upper(), original_text
-    )
+    original_text = re.sub(r"(^|[.?!])\s*([a-zA-Z])", lambda p: p.group(0).upper(), original_text)
 
     # get initial readability score
     original_score = textstat.flesch_kincaid_grade(original_text)
@@ -297,9 +287,8 @@ def readability_score(final_page):
     revised_text = revised_text.replace("\t", " ")
     revised_text = revised_text.replace("\r", " ")
     revised_text = revised_text.replace("  ", " ")
-    revised_text = re.sub(
-        r"(^|[.?!])\s*([a-zA-Z])", lambda p: p.group(0).upper(), revised_text
-    )
+    revised_text = re.sub(r"(^|[.?!])\s*([a-zA-Z])", lambda p: p.group(0).upper(), revised_text)
+
 
     final_fk = textstat.flesch_kincaid_grade(revised_text)
 
