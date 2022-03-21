@@ -252,6 +252,7 @@ def cleanup_html_data(html_data):
     filedata = filedata.replace("\\xf4", "&ocirc;")
     filedata = filedata.replace("\\xf6", "&ouml;")
     filedata = filedata.replace(">>", ">")
+    filedata = filedata.replace('<div class="par iparys_inherited">', '</main><div class="par iparys_inherited">')
     filedata2 = filedata.split("<!--CONTENT STARTS HERE-->")
     filedata2 = filedata2[1]
     filedata3 = filedata2.split("<!-- CONTENT ENDS HERE -->")
