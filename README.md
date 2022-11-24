@@ -1,3 +1,5 @@
+Note: this repo will not ne updated. Official repo is now at https://github.com/alpha-canada-ca/doc_to_html, and the tool itself can be accessed at https://doc-to-html.tbs.alpha.canada.ca/
+
 # From Word doc to full Canada.ca html
 This is an experiment to try to turn Word documents into the full HTML code for Canada.ca pages.
 
